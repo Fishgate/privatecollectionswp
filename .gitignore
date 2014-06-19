@@ -2,6 +2,7 @@
 /htdocs/wp-snapshots/*
 /htdocs/wp-content/themes/privatecollections/readme.txt
 /htdocs/wp-content/themes/privatecollections/CHANGELOG.md
+/resources/*
 
 # Don't add the Local settings file to the repository #
 /htdocs/wp-config-local.php
