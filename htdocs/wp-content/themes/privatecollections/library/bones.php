@@ -172,6 +172,24 @@ function bones_scripts_and_styles() {
                 wp_enqueue_script( 'supersized-shuttertheme-js' );
 		wp_enqueue_script( 'bones-js' );
                 
+                // make some php data available to scripts.js                
+                global $nggdb;
+                $nextg = new $nggdb;
+                
+                $slides = array();
+                
+                foreach($nextg->get_gallery('background-slideshow') as $image) {
+                    $slide_image_url = content_url('gallery/' . $image->slug . '/' . $image->filename);
+                    array_push($slides, array("image" => $slide_image_url));                    
+                }
+                
+                $json_slides = json_encode($slides);
+                
+                wp_localize_script( 'bones-js', 'site_data', array(
+                    'template_dir' => get_template_directory_uri(),
+                    'bg_slideshow_data' => $json_slides,
+                ));
+                
 	}
 }
 
