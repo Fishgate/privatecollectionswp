@@ -17,6 +17,9 @@ require_once( 'library/custom-post-type.php' );
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 // require_once( 'library/admin.php' );
 
+// LOAD SHORTCODES
+require_once('library/shortcodes.php');
+
 /*********************
 LAUNCH BONES
 Let's get everything up and running.
@@ -204,7 +207,6 @@ function bones_fonts() {
 }
 
 add_action('wp_print_styles', 'bones_fonts');
-
 
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

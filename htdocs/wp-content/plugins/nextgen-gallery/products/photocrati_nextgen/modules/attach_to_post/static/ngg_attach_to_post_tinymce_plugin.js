@@ -136,5 +136,5 @@
 	});
 
 	// Register plugin
-	tinymce.PluginManager.add('NextGEN_AttachToPost', tinymce.plugins.NextGEN_AttachToPost);
+	//tinymce.PluginManager.add('NextGEN_AttachToPost', tinymce.plugins.NextGEN_AttachToPost);
 })(photocrati_ajax.wp_site_url);
