@@ -173,6 +173,8 @@ function bones_scripts_and_styles() {
 		wp_enqueue_script( 'bones-js' );
                 
                 // make some php data available to scripts.js                
+                
+                //method 1 using nextgen gallery
                 global $nggdb;
                 $nextg = new $nggdb;
                 
@@ -187,8 +189,9 @@ function bones_scripts_and_styles() {
                 
                 wp_localize_script( 'bones-js', 'site_data', array(
                     'template_dir' => get_template_directory_uri(),
-                    'bg_slideshow_data' => $json_slides,
+                    'bg_slideshow' => $json_slides,
                 ));
+                
                 
 	}
 }

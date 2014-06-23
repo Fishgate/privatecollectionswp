@@ -251,3 +251,12 @@ them however you see fit.
   }
 
 } // end desktop styles
+
+/* Super Large Monitor. Full width on at least 1600px monitor */
+@media (min-width: 1240px) {
+    .f-right {
+        width: 36.274509%;        
+        float: right;
+        padding: 0;
+    }
+}

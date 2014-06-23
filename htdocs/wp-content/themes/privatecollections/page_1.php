@@ -4,7 +4,7 @@
 
 				<div id="inner-content" class="wrap cf">
 
-						<div id="main" class="m-all t-2of3 d-1of3 f-right cf" role="main">
+						<div id="main" class="m-all t-2of3 d-5of7 cf" role="main">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -64,14 +64,16 @@
 											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
 										</section>
 										<footer class="article-footer">
-											<p><?php _e( 'This is the error message in the page.php template.', 'bonestheme' ); ?></p>
+												<p><?php _e( 'This is the error message in the page.php template.', 'bonestheme' ); ?></p>
 										</footer>
 									</article>
 
 							<?php endif; ?>
 
 						</div>
-                                    
+
+						<?php get_sidebar(); ?>
+
 				</div>
 
 			</div>

@@ -17,11 +17,18 @@ GENERAL STYLES
 
 body {
 	font-family: $lato;
-	font-size: 100%;
+	/*font-size: 100%;*/
+        font-size: 12px;
 	line-height: 1.5;
-	color: $text-color;
+	color: $pc-grey;
 	background-color: $gray;
   -webkit-font-smoothing: antialiased;
+}
+
+img.flex {
+    max-width: 100%; 
+    min-width: 100%;
+    height: auto;
 }
 
 /********************
@@ -151,17 +158,18 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 
-.header {
-	background-color: $black;
+
+#logo {
+        margin: 0.75em 0;
+
+        a {
+                color: $white;
+        }
 }
 
-	#logo {
-		margin: 0.75em 0;
-
-		a {
-			color: $white;
-		}
-	}
+.header-bg {
+    background: rgba(0, 0, 0, 0.7);
+}
 
 /*********************
 NAVIGATION STYLES
@@ -183,9 +191,10 @@ and more scalable.
 
 		a {
 			display: block;
-			color: $white;
+			color: $pc-grey;
 			text-decoration: none;
 			padding: 0.75em;
+                        text-transform: uppercase;
 
 			/*
 			remember this is for mobile ONLY, so there's no need
