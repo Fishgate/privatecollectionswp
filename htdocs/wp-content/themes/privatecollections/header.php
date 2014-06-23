@@ -49,7 +49,7 @@
                                     
                                         <div class="header-bg f-right cf">
                                                 <div class="f-pc-logo">
-                                                        <img class="flex" src="<?php echo get_template_directory_uri() ?>/library/images/private-collections-logo.png" alt="<?php bloginfo('name'); ?>" />
+                                                    <a href="<?php echo home_url(); ?>" rel="nofollow"><img class="flex" src="<?php echo get_template_directory_uri() ?>/library/images/private-collections-logo.png" alt="<?php bloginfo('name'); ?>" /></a>
                                                 </div>
                                             
                                                 <nav role="navigation">
