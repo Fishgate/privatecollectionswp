@@ -42,8 +42,8 @@ NAVIGATION STYLES
 .nav {
 	border: 0;
 	ul {
-		background:$black;
-		margin-top:0;
+		background: $pc-semiblack;
+		margin-top: 0;
 	}
 	li {
 		float: left;
@@ -71,20 +71,21 @@ NAVIGATION STYLES
 		ul.sub-menu,
 		ul.children {
 			margin-top: 0;
-			border: 1px solid #ccc;
+			border: none;
 			border-top: 0;
 			position: absolute;
 			visibility: hidden;
 			z-index: 8999;
 
 			li {
+                                float:none;
 
 				a {
-					padding-left: 10px;
+                                        text-align: left;
+					padding: 10px;
 					border-right: 0;
 					display: block;
-					width: 180px;
-					border-bottom: 1px solid #ccc;
+					width: 120px;					
 
 					&:hover,
 					&:focus {}
