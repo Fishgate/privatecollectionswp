@@ -575,6 +575,14 @@ HOMEPAGE FEATURES
             padding-top: 100%;
         }
         
+        p {
+            font-weight: 300;            
+            width: 100%;
+            text-transform: uppercase;
+            margin-top: 33%;
+            text-align: center;
+        }
+            
         .overlay, img, p {
             position: absolute;
         }
