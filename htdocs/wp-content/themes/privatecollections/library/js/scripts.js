@@ -113,6 +113,13 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
   
+  // initiate flowtype.js for to scale text instead of wrapping (sigh designers) in the album blocks
+  $('.album-feature .stack-container p').flowtype({
+      minimum   : 74,
+      maximum   : 95,
+      fontRatio : 8
+  });
+  
   // initiate supersized full screen background slideshow    
   viewport = updateViewportDimensions();
   

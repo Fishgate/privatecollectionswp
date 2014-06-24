@@ -85,7 +85,7 @@
                                                                 <div class="stack-container">
                                                                     <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
                                                                     <div class="overlay"></div>
-                                                                    <p>Overlay txt</p>
+                                                                    <p>Architectural Pieces</p>
                                                                 </div>
                                                             </div>
                                                             
@@ -93,7 +93,7 @@
                                                                 <div class="stack-container">
                                                                     <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
                                                                     <div class="overlay"></div>
-                                                                    <p>Overlay txt</p>
+                                                                    <p>Furniture</p>
                                                                 </div>
                                                             </div>
                                                             
@@ -101,7 +101,7 @@
                                                                 <div class="stack-container">
                                                                     <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
                                                                     <div class="overlay"></div>
-                                                                    <p>Overlay txt</p>
+                                                                    <p>Decorative Pieces</p>
                                                                 </div>
                                                             </div>
                                                             
@@ -109,7 +109,7 @@
                                                                 <div class="stack-container">
                                                                     <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
                                                                     <div class="overlay"></div>
-                                                                    <p>Overlay txt</p>
+                                                                    <p>Lighting</p>
                                                                 </div>
                                                             </div>
                                                             
@@ -117,7 +117,7 @@
                                                                 <div class="stack-container">
                                                                     <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
                                                                     <div class="overlay"></div>
-                                                                    <p>Overlay txt</p>
+                                                                    <p>Smalls</p>
                                                                 </div>
                                                             </div>
                                                             

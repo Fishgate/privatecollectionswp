@@ -150,6 +150,9 @@ function bones_scripts_and_styles() {
                 wp_register_script( 'supersized-js', get_stylesheet_directory_uri() . '/library/js/libs/supersized.3.2.7.min.js', array( 'jquery' ), '', true);
                 wp_register_script( 'supersized-shuttertheme-js', get_stylesheet_directory_uri() . '/library/js/libs/supersized.shutter.min.js', array( 'jquery', 'supersized-js' ), '', true);
                 
+                // include FlowType.js (http://simplefocus.com/flowtype/)
+                wp_register_script( 'flowtype-js', get_stylesheet_directory_uri() . '/library/js/libs/flowtype.min.js', array( 'jquery' ), '', true);
+                
                 // adding scripts file in the footer
 		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.min.js', array( 'jquery', 'supersized-js', 'supersized-shuttertheme-js' ), '', true );
 
@@ -170,6 +173,7 @@ function bones_scripts_and_styles() {
 		wp_enqueue_script( 'jquery' );
                 wp_enqueue_script( 'supersized-js' );
                 wp_enqueue_script( 'supersized-shuttertheme-js' );
+                wp_enqueue_script( 'flowtype-js' );
 		wp_enqueue_script( 'bones-js' );
                 
                 // make some php data available to scripts.js                

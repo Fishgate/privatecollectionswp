@@ -532,7 +532,7 @@ HOMEPAGE FEATURES
 }
 
 .album-feature {
-    margin-bottom: 120px;    
+    margin-bottom: 23.169%; // This totals to 120px padding (the full height of the element + 25px)
     
     .stack-container {
         position: relative;
@@ -544,7 +544,9 @@ HOMEPAGE FEATURES
         }
 
         p {
-            background: red;
+            font-weight: 300;            
+            width: 100%;
+            text-transform: uppercase;
         }
 
         .overlay, img, p {
@@ -952,6 +954,5 @@ FOOTER STYLES
 
 
 	.copyright {
-            float: right;
-            background: red;
+            float: right;            
         }
