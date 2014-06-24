@@ -37,6 +37,10 @@ over your project's layout.
   padding-right: 0 !important;
 }
 
+.last {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+}
 
 /*
 Mobile Grid Styles
@@ -138,6 +142,7 @@ them however you see fit.
 
 /* Landscape to small desktop */
 @media (min-width: 1030px) {
+    
 
   .d-all  {
     @include grid-col;
@@ -258,5 +263,17 @@ them however you see fit.
         width: 36.274509%;        
         float: right;
         padding: 0;
+    }
+
+    .feature-f-1of2 {
+        width: 48%;
+        float: left;
+        margin: 0 4% 0 0;
+    }
+
+    .album-f-1of5 {
+        width: 18.4%;
+        float: left;
+        margin: 0 2% 0 0;
     }
 }

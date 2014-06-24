@@ -16,7 +16,7 @@ GENERAL STYLES
 *********************/
 
 body {
-	font-family: $lato;
+	font-family: $opensans;
 	/*font-size: 100%;*/
         font-size: 0.750em;
 	line-height: 1.5;
@@ -81,6 +81,8 @@ LAYOUT & GRID STYLES
 	margin: 0 auto;
 }
 
+
+
 /*********************
 LINK STYLES
 *********************/
@@ -128,16 +130,15 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-	font-size: 1.563em;
+        font-size: 2.5em;
 	line-height: 1.333em;
-        text-transform: uppercase;
-        margin: 0 0 20px;
 }
 
 h2, .h2 {
-	font-size: 1.75em;
-	line-height: 1.4em;
-	margin-bottom: 0.375em;
+        font-size: 1.563em;
+	line-height: 1em;
+	margin: 0 0 20px;
+        text-transform: uppercase;
 }
 
 h3, .h3 {
@@ -170,7 +171,7 @@ HEADER STYLES
 }
 
 .header-bg {
-    background: $pc-semiblack;
+    background: black(0.7);
 }
 
 /*********************
@@ -266,8 +267,8 @@ POSTS & CONTENT STYLES
 }
 
 		.hentry {
-			background-color: $pc-semiblack;
-			margin-bottom: 1.5em;
+			background: black(0.7);
+			margin-bottom: 25px;
 
 			header {
 				border-bottom: 1px solid $light-gray;
@@ -343,13 +344,19 @@ POSTS & CONTENT STYLES
 
 			ul {
 
-				li {}
+				li { 
+                                    list-style-type: disc; 
+                                    list-style-position: inside;
+                                }
 
 			}
 
 			ol {
 
-				li {}
+				li {
+                                    list-style-type: decimal;
+                                    list-style-position: inside;
+                                }
 
 			}
 
@@ -501,6 +508,51 @@ POSTS & CONTENT STYLES
 	.tags {
 		margin: 0;
 	}
+
+/*********************
+HOMEPAGE FEATURES
+*********************/
+.feature {
+    background: black(0.7);
+    margin-bottom: 25px;
+
+    p.date-stamp {
+        font-size: 1.182em;
+        color: $pc-yellow;
+        margin: 0;
+        padding: 0 20px 20px 20px;
+    }
+
+    h2 {
+        padding: 20px 20px 0;
+        margin: 0;
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+}
+
+.album-feature {
+    margin-bottom: 120px;    
+    
+    .stack-container {
+        position: relative;
+
+        .overlay {
+            background: black(0.7);
+            width: 100%;
+            padding-top: 100%;
+        }
+
+        p {
+            background: red;
+        }
+
+        .overlay, img, p {
+            position: absolute;
+        }
+    }   
+
+}
 
 /******************************************************************
 PAGE NAVI STYLES
@@ -901,4 +953,5 @@ FOOTER STYLES
 
 	.copyright {
             float: right;
+            background: red;
         }

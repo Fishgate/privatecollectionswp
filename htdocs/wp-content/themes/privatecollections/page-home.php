@@ -62,9 +62,66 @@
 
 							<?php endif; ?>
                                                     
-                                                        <div>hello!</div>
-                                                        
-                                                        <div>hello!</div>
+                                                    
+                                                        <div class="d-all cf">
+                                                            
+                                                            <div class="feature feature-f-1of2">
+                                                                <div><img class="flex" src="http://placehold.it/251x167" alt="http://placehold.it/251x167" /></div>
+                                                                <h2>New Collection</h2>
+                                                                <p class="date-stamp">00-00-0000</p>
+                                                            </div>
+
+                                                            <div class="feature feature-f-1of2 last">
+                                                                <div><img class="flex" src="http://placehold.it/251x167" alt="http://placehold.it/251x167" /></div>
+                                                                <h2>New Collection</h2>
+                                                                <p class="date-stamp">00-00-0000</p>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                            
+                                                        <div class="d-all cf">
+                                                            
+                                                            <div class="album-feature album-f-1of5">
+                                                                <div class="stack-container">
+                                                                    <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
+                                                                    <div class="overlay"></div>
+                                                                    <p>Overlay txt</p>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="album-feature album-f-1of5">
+                                                                <div class="stack-container">
+                                                                    <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
+                                                                    <div class="overlay"></div>
+                                                                    <p>Overlay txt</p>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="album-feature album-f-1of5">
+                                                                <div class="stack-container">
+                                                                    <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
+                                                                    <div class="overlay"></div>
+                                                                    <p>Overlay txt</p>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="album-feature album-f-1of5">
+                                                                <div class="stack-container">
+                                                                    <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
+                                                                    <div class="overlay"></div>
+                                                                    <p>Overlay txt</p>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="album-feature album-f-1of5 last">
+                                                                <div class="stack-container">
+                                                                    <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
+                                                                    <div class="overlay"></div>
+                                                                    <p>Overlay txt</p>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>
 
 						</div>
                                     

@@ -126,5 +126,8 @@ jQuery(document).ready(function($) {
         slides : bg_slideshow_data
     });
   }
+  
+  //image overlays 100% height
+
 
 }); /* end of as page load scripts */

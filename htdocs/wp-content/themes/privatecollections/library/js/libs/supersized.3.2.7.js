@@ -15,7 +15,7 @@
 	/* Place Supersized Elements
 	----------------------------*/
 	$(document).ready(function() {
-		//$('body').append('<div id="supersized-loader"></div><ul id="supersized"></ul>'); removed loader div because this gets thrown into the dom regardless of whether the function was called in scripts.js or not.
+		//$('body').append('<div id="supersized-loader"></div><ul id="supersized"></ul>'); removed loader div because appended onto the <body> regardless of whether the function was called in scripts.js or not.
                 $('body').append('<ul id="supersized"></ul>');
 	});
     
