@@ -14,33 +14,22 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-    width: 89.25%;
     max-width: 1428px;
 }
-
-
-/*********************
-HOMEPAGE FEATURES
-*********************/
-
 
 /*********************
 HEADER STYLES
 *********************/
 
-.header-bg {
-    padding: 10px 20px;
-}
-
-.f-pc-logo {
+.d-pc-logo {
     width: 45.815899%;
     float: left;
 }
 
-
 /*********************
 NAVIGATION STYLES
 *********************/
+
 header {
     nav {
         float: right;
@@ -48,64 +37,3 @@ header {
         margin: 2% 0 0 0;
     }
 }
-
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
-*/
-
-.nav {
-	
-	li {
-                width: 33.333333%;
-
-		a {
-                        text-align: center;
-			
-			&:hover, &:focus {
-
-			}
-		}
-
-		&:first-child {}
-
-		&:last-child {}
-
-		/* Sub menu items begin */
-		ul.sub-menu,
-		ul.children {
-
-			li {
-
-				a {
-
-					&:hover,
-					&:focus {}
-
-					&:link {}
-
-				}
-
-				&:first-child {}
-
-				&:last-child {}
-
-			}
-
-		} /* end sub menu items */
-
-	} /* end .menu li */
-
-	/* highlight current page */
-	li.current-menu-item,
-	li.current_page_item,
-	li.current_page_ancestor {
-
-		a {}
-
-	}  /* end current highlighters */
-
-} /* end .nav */

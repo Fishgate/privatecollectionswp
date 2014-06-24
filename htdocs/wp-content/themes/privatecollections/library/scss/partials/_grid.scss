@@ -142,138 +142,152 @@ them however you see fit.
 
 /* Landscape to small desktop */
 @media (min-width: 1030px) {
-    
-
-  .d-all  {
-    @include grid-col;
-    width: 100%;
-    padding-right: 0;
-  }
-
-  .d-1of2 {
-    @include grid-col;
-    width: 50%;
-  }
-
-  .d-1of3 {
-    @include grid-col;
-    width: 33.33%;
-  }
-
-  .d-2of3 {
-    @include grid-col;
-    width: 66.66%;
-  }
-
-  .d-1of4 {
-    @include grid-col;
-    width: 25%;
-  }
-
-  .d-3of4 {
-    @include grid-col;
-    width: 75%;
-  }
-
-  .d-1of5 {
-    @include grid-col;
-    width: 20%;
-  }
-
-  .d-2of5 {
-    @include grid-col;
-    width: 40%;
-  }
-
-  .d-3of5 {
-    @include grid-col;
-    width: 60%;
-  }
-
-  .d-4of5 {
-    @include grid-col;
-    width: 80%;
-  }
-
-  .d-1of6 {
-    @include grid-col;
-    width: 16.6666666667%;
-  }
-
-  .d-1of7 {
-    @include grid-col;
-    width: 14.2857142857%;
-  }
-
-  .d-2of7 {
-    @include grid-col;
-    width: 28.5714286%;
-  }
-
-  .d-3of7 {
-    @include grid-col;
-    width: 42.8571429%;
-  }
-
-  .d-4of7 {
-    @include grid-col;
-    width: 57.1428572%;
-  }
-
-  .d-5of7 {
-    @include grid-col;
-    width: 71.4285715%;
-  }
-
-  .d-6of7 {
-    @include grid-col;
-    width: 85.7142857%;
-  }
-
-  .d-1of8 {
-    @include grid-col;
-    width: 12.5%;
-  }
-
-  .d-1of9 {
-    @include grid-col;
-    width: 11.1111111111%;
-  }
-
-  .d-1of10 {
-    @include grid-col;
-    width: 10%;
-  }
-
-  .d-1of11 {
-    @include grid-col;
-    width: 9.09090909091%;
-  }
-
-  .d-1of12 {
-    @include grid-col;
-    width: 8.33%;
-  }
-
-} // end desktop styles
-
-/* Super Large Monitor. Full width on at least 1600px monitor */
-@media (min-width: 1240px) {
-    .f-right {
+    .d-main {
         width: 36.274509%;        
+        margin-left: 3.6764715%;
         float: right;
         padding: 0;
     }
 
-    .feature-f-1of2 {
+    .d-img {
+        width: 48.739495%;
+        margin-left: 3.6764715%;
+        float: right;
+        background: red;
+    }
+
+    .d-gallerynav {
+        width: 7.633053%;
+        float: right;
+        background: orange;
+    }
+
+    .feature-d-1of2 {
         width: 48%;
         float: left;
         margin: 0 4% 0 0;
     }
 
-    .album-f-1of5 {
+    .album-d-1of5 {
         width: 18.4%;
         float: left;
         margin: 0 2% 0 0;
     }
+
+    .d-all  {
+      @include grid-col;
+      width: 100%;
+      padding-right: 0;
+    }
+
+    .d-1of2 {
+      @include grid-col;
+      width: 50%;
+    }
+
+    .d-1of3 {
+      @include grid-col;
+      width: 33.33%;
+    }
+
+    .d-2of3 {
+      @include grid-col;
+      width: 66.66%;
+    }
+
+    .d-1of4 {
+      @include grid-col;
+      width: 25%;
+    }
+
+    .d-3of4 {
+      @include grid-col;
+      width: 75%;
+    }
+
+    .d-1of5 {
+      @include grid-col;
+      width: 20%;
+    }
+
+    .d-2of5 {
+      @include grid-col;
+      width: 40%;
+    }
+
+    .d-3of5 {
+      @include grid-col;
+      width: 60%;
+    }
+
+    .d-4of5 {
+      @include grid-col;
+      width: 80%;
+    }
+
+    .d-1of6 {
+      @include grid-col;
+      width: 16.6666666667%;
+    }
+
+    .d-1of7 {
+      @include grid-col;
+      width: 14.2857142857%;
+    }
+
+    .d-2of7 {
+      @include grid-col;
+      width: 28.5714286%;
+    }
+
+    .d-3of7 {
+      @include grid-col;
+      width: 42.8571429%;
+    }
+
+    .d-4of7 {
+      @include grid-col;
+      width: 57.1428572%;
+    }
+
+    .d-5of7 {
+      @include grid-col;
+      width: 71.4285715%;
+    }
+
+    .d-6of7 {
+      @include grid-col;
+      width: 85.7142857%;
+    }
+
+    .d-1of8 {
+      @include grid-col;
+      width: 12.5%;
+    }
+
+    .d-1of9 {
+      @include grid-col;
+      width: 11.1111111111%;
+    }
+
+    .d-1of10 {
+      @include grid-col;
+      width: 10%;
+    }
+
+    .d-1of11 {
+      @include grid-col;
+      width: 9.09090909091%;
+    }
+
+    .d-1of12 {
+      @include grid-col;
+      width: 8.33%;
+    }
+
+} // end desktop styles
+
+/* Super Large Monitor. Full width on at least 1600px monitor */
+@media (min-width: 1240px) {
+
 }

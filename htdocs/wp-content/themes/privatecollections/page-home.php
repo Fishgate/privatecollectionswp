@@ -10,7 +10,7 @@
 
 				<div id="inner-content" class="wrap cf">
 
-						<div id="main" class="m-all t-2of3 d-1of3 f-right cf" role="main">
+						<div id="main" class="m-all t-all d-main cf" role="main">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -63,15 +63,15 @@
 							<?php endif; ?>
                                                     
                                                     
-                                                        <div class="d-all cf">
+                                                        <div class="m-all t-all d-all cf">
                                                             
-                                                                <div class="feature feature-f-1of2">
+                                                                <div class="feature feature-d-1of2">
                                                                     <div><img class="flex" src="http://placehold.it/251x167" alt="http://placehold.it/251x167" /></div>
                                                                     <h2>New Collection</h2>
                                                                     <p class="date-stamp">00-00-0000</p>
                                                                 </div>
 
-                                                                <div class="feature feature-f-1of2 last"> <?php //.last on every 2th iteration ?>
+                                                                <div class="feature feature-d-1of2 last"> <?php //.last on every 2th iteration ?>
                                                                     <div><img class="flex" src="http://placehold.it/251x167" alt="http://placehold.it/251x167" /></div>
                                                                     <h2>New Collection</h2>
                                                                     <p class="date-stamp">00-00-0000</p>
@@ -79,25 +79,29 @@
                                                             
                                                         </div>
                                                             
-                                                        <div class="d-all cf">
+                                                        <div class="m-all t-all d-all cf">
                                                             
-                                                                <div class="album-feature album-f-1of5">
-                                                                    <div class="stack-container">
-                                                                        <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
-                                                                        <div class="overlay"></div>
-                                                                        <p>Architectural Pieces</p>
-                                                                    </div>
+                                                                <div class="album-feature album-d-1of5">
+                                                                    <a href="#" title="Go to Architectural Pieces">
+                                                                        <div class="stack-container">
+                                                                            <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
+                                                                            <div class="overlay"></div>
+                                                                            <p>Architectural Pieces</p>
+                                                                        </div>
+                                                                    </a>
                                                                 </div>
 
-                                                                <div class="album-feature album-f-1of5">
-                                                                    <div class="stack-container">
-                                                                        <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
-                                                                        <div class="overlay"></div>
-                                                                        <p>Furniture</p>
-                                                                    </div>
+                                                                <div class="album-feature album-d-1of5">
+                                                                    <a href="#" title="Go to Architectural Pieces">
+                                                                        <div class="stack-container">
+                                                                            <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
+                                                                            <div class="overlay"></div>
+                                                                            <p>Furniture</p>
+                                                                        </div>
+                                                                    </a>
                                                                 </div>
 
-                                                                <div class="album-feature album-f-1of5">
+                                                                <div class="album-feature album-d-1of5">
                                                                     <div class="stack-container">
                                                                         <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
                                                                         <div class="overlay"></div>
@@ -105,7 +109,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="album-feature album-f-1of5">
+                                                                <div class="album-feature album-d-1of5">
                                                                     <div class="stack-container">
                                                                         <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
                                                                         <div class="overlay"></div>
@@ -113,7 +117,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="album-feature album-f-1of5 last"> <?php //.last on every 5th iteration ?>
+                                                                <div class="album-feature album-d-1of5 last"> <?php //.last on every 5th iteration ?>
                                                                     <div class="stack-container">
                                                                         <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
                                                                         <div class="overlay"></div>

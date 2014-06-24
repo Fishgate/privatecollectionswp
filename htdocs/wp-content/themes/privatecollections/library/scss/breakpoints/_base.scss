@@ -81,7 +81,15 @@ LAYOUT & GRID STYLES
 	margin: 0 auto;
 }
 
-
+#bg-dim { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: -998; // 1 layer above supersized
+    width: 4000px; 
+    height: 4000px; 
+    background: black(0.3);
+}
 
 /*********************
 LINK STYLES
@@ -251,7 +259,7 @@ and more scalable.
 	li.current_page_item,
 	li.current_page_ancestor {
 
-		a {}
+		a { color: $pc-yellow; }
 
 	}  /* end current highlighters */
 
@@ -534,11 +542,35 @@ HOMEPAGE FEATURES
 .album-feature {
     margin-bottom: 23.169%; // This totals to 120px padding (the full height of the element + 25px)
     
+    a, a:visited {
+            color: $pc-grey;
+
+            /* on hover */
+            &:hover, &:focus {
+                    color: $pc-grey;
+            }
+
+            /* on click */
+            &:active {
+
+            }
+
+            /* mobile tap color */
+            &:link {
+                    /*
+                    this highlights links on iPhones/iPads.
+                    so it basically works like the :hover selector
+                    for mobile devices.
+                    */
+                    -webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+            }
+    }
+    
     .stack-container {
-        position: relative;        
+        position: relative;    
 
         .overlay {
-            background: black(0.7);
+            background: black(0.3);
             width: 100%;
             padding-top: 100%;
         }

@@ -1,9 +1,15 @@
+<?php
+/*
+ Template Name: Gallery
+*/
+?>
+
 <?php get_header(); ?>
 
 			<div id="content">
 
 				<div id="inner-content" class="wrap cf">
-
+                                    
 						<div id="main" class="m-all t-all d-main cf" role="main">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -56,10 +62,16 @@
 
 							<?php endif; ?>
 
-						</div>
+						</div><!-- close #main -->
+                                                
+                                                <div id="image" class="m-all t-all d-img">img</div>
+                                                
+                                                <div id="gallery-nav" class="m-all t-all d-gallerynav">nav</div>
                                     
 				</div>
 
 			</div>
+                        
+                        <div id="bg-dim"></div>
 
 <?php get_footer(); ?>

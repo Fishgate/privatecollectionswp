@@ -117,7 +117,7 @@ jQuery(document).ready(function($) {
   $('.album-feature .stack-container p').flowtype({
       minimum   : 74,
       maximum   : 95,
-      fontRatio : 8
+      fontRatio : 9
   });
   
   // initiate supersized full screen background slideshow    
