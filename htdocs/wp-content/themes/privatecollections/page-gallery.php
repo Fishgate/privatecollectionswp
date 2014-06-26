@@ -64,9 +64,42 @@
 
 						</div><!-- close #main -->
                                                 
-                                                <div id="image" class="m-all t-all d-img">img</div>
+                                                <div id="gallery-images" class="m-all t-all d-img">
+                                                        
+                                                        <!--
+                                                        <div id="img1" class="gallery-img">
+                                                            <a href="#myToggle" data-toggle="drop-panel" class="panel" cap-effect="fade">
+                                                                <img class="flex" src="http://placehold.it/950x750" alt="" />
+                                                            </a>
+                                                            
+                                                            <div id="myToggle" class="cap-overlay hide">
+                                                                <h2>Cupcakes</h2>
+                                                            </div>   
+                                                        </div>
+                                                        -->
+                                                        
+                                                        <div id="img1" class="gallery-img">
+                                                            <div class="img-overlay-panel">
+                                                                <img class="flex" src="http://placehold.it/950x750" alt="">
+
+                                                                <div class="overlay">
+                                                                    <h2>Cupcakes</h2>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                </div>
                                                 
-                                                <div id="gallery-nav" class="m-all t-all d-gallerynav">nav</div>
+                                                <div id="gallery-nav" class="m-all t-all d-gallerynav">
+                                                    
+                                                    <ul>
+                                                        <li><img class="flex" src="http://placehold.it/109x109" /></li>
+                                                        <li><img class="flex" src="http://placehold.it/109x109" /></li>
+                                                        <li><img class="flex" src="http://placehold.it/109x109" /></li>
+                                                        <li><img class="flex" src="http://placehold.it/109x109" /></li>
+                                                    </ul>
+                                                    
+                                                </div>
                                     
 				</div>
 

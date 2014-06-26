@@ -114,12 +114,14 @@ jQuery(document).ready(function($) {
   loadGravatars();
   
   // initiate flowtype.js for to scale text instead of wrapping (sigh designers) in the album blocks
-  $('.album-feature .stack-container p').flowtype({
+   $('.album-feature .img-overlay-panel .overlay p').flowtype({
       minimum   : 74,
       maximum   : 95,
       fontRatio : 9
   });
-  
+   
+  //$('.panel').hcaptions();
+
   // initiate supersized full screen background slideshow    
   viewport = updateViewportDimensions();
   
@@ -134,7 +136,5 @@ jQuery(document).ready(function($) {
     });
   }
   
-  //image overlays 100% height
-
 
 }); /* end of as page load scripts */

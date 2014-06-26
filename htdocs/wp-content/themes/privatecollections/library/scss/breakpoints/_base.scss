@@ -25,11 +25,11 @@ body {
         -webkit-font-smoothing: antialiased;
 }
 
-img.flex {
-    max-width: 100%; 
-    min-width: 100%;
-    height: auto;
+
+.hidden {
+    display: none;
 }
+ 
 
 /********************
 WORDPRESS BODY CLASSES
@@ -90,6 +90,33 @@ LAYOUT & GRID STYLES
     height: 4000px; 
     background: black(0.3);
 }
+
+/* Setup styles for creating semi transparent overlays on images (used a few times in this site) */
+.img-overlay-panel {
+    position: relative; 
+    overflow: hidden; 
+    display: block;
+
+    .overlay{
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+        padding-bottom: 100%;
+        background: black(0.8);
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+    }
+} 
+
+
+img.flex {
+    max-width: 100%; 
+    min-width: 100%;
+    height: auto;
+}
+
+
 
 /*********************
 LINK STYLES
@@ -259,11 +286,29 @@ and more scalable.
 	li.current_page_item,
 	li.current_page_ancestor {
 
-		a { color: $pc-yellow; }
+		> a { color: $pc-yellow; }
 
 	}  /* end current highlighters */
 
 } /* end .nav */
+
+/*********************
+GALLERY STYLES
+*********************/
+
+.gallery-img {
+    .img-overlay-panel {
+        .overlay{
+            display: none;
+        }
+    }
+
+    &:hover {
+        .overlay{
+            display: block;
+        }
+    }
+}
 
 
 /*********************
@@ -539,21 +584,20 @@ HOMEPAGE FEATURES
     }
 }
 
-.album-feature {
-    margin-bottom: 23.169%; // This totals to 120px padding (the full height of the element + 25px)
-    
-    a, a:visited {
+#album-features-thumbs {
+    margin: 0 0 25px 0;
+
+    .album-feature {
+        a, a:visited {
             color: $pc-grey;
 
             /* on hover */
             &:hover, &:focus {
-                    color: $pc-grey;
+                color: $pc-grey;
             }
 
             /* on click */
-            &:active {
-
-            }
+            &:active {}
 
             /* mobile tap color */
             &:link {
@@ -564,30 +608,20 @@ HOMEPAGE FEATURES
                     */
                     -webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
             }
+        }
+
+        .img-overlay-panel {
+            .overlay{
+                p {
+                    font-weight: 300;            
+                    width: 100%;
+                    text-transform: uppercase;
+                    margin-top: 33%;
+                    text-align: center;
+                }
+            }
+        }
     }
-    
-    .stack-container {
-        position: relative;    
-
-        .overlay {
-            background: black(0.3);
-            width: 100%;
-            padding-top: 100%;
-        }
-
-        .overlay, img, p {
-            position: absolute;
-        }
-        
-        p {
-            font-weight: 300;            
-            width: 100%;
-            text-transform: uppercase;
-            margin-top: 33%;
-            text-align: center;
-        }
-
-    }   
 
 }
 

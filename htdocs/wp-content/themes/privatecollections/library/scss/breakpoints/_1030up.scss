@@ -95,3 +95,17 @@ and more scalable.
 	}  /* end current highlighters */
 
 } /* end .nav */
+
+/*********************
+GALLERY STYLES
+*********************/
+
+#gallery-nav {
+    ul {
+        margin: 0;
+
+        li {
+            padding: 0 0 15px 0;
+        }
+    }
+}

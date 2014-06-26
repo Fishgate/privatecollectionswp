@@ -79,49 +79,50 @@
                                                             
                                                         </div>
                                                             
-                                                        <div class="m-all t-all d-all cf">
+                                                        <div id="album-features-thumbs" class="m-all t-all d-all cf">
                                                             
                                                                 <div class="album-feature album-d-1of5">
-                                                                    <a href="#" title="Go to Architectural Pieces">
-                                                                        <div class="stack-container">
-                                                                            <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
-                                                                            <div class="overlay"></div>
-                                                                            <p>Architectural Pieces</p>
-                                                                        </div>
-                                                                    </a>
-                                                                </div>
-
-                                                                <div class="album-feature album-d-1of5">
-                                                                    <a href="#" title="Go to Architectural Pieces">
-                                                                        <div class="stack-container">
-                                                                            <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
-                                                                            <div class="overlay"></div>
-                                                                            <p>Furniture</p>
-                                                                        </div>
-                                                                    </a>
-                                                                </div>
-
-                                                                <div class="album-feature album-d-1of5">
-                                                                    <div class="stack-container">
+                                                                    <div class="img-overlay-panel">
                                                                         <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
-                                                                        <div class="overlay"></div>
-                                                                        <p>Decorative Pieces</p>
+                                                                        <div class="overlay">
+                                                                            <p>Decorative Pieces</p>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-
+                                                            
                                                                 <div class="album-feature album-d-1of5">
-                                                                    <div class="stack-container">
+                                                                    <div class="img-overlay-panel">
                                                                         <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
-                                                                        <div class="overlay"></div>
-                                                                        <p>Lighting</p>
+                                                                        <div class="overlay">
+                                                                            <p>Decorative Pieces</p>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-
-                                                                <div class="album-feature album-d-1of5 last"> <?php //.last on every 5th iteration ?>
-                                                                    <div class="stack-container">
+                                                            
+                                                                <div class="album-feature album-d-1of5">
+                                                                    <div class="img-overlay-panel">
                                                                         <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
-                                                                        <div class="overlay"></div>
-                                                                        <p>Smalls</p>
+                                                                        <div class="overlay">
+                                                                            <p>Decorative Pieces</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            
+                                                                <div class="album-feature album-d-1of5">
+                                                                    <div class="img-overlay-panel">
+                                                                        <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
+                                                                        <div class="overlay">
+                                                                            <p>Decorative Pieces</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            
+                                                                <div class="album-feature album-d-1of5 last">
+                                                                    <div class="img-overlay-panel">
+                                                                        <img class="flex" src="http://placehold.it/95x95" alt="http://placehold.it/95x95" />
+                                                                        <div class="overlay">
+                                                                            <p>Decorative Pieces</p>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             
