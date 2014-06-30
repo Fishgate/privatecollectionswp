@@ -243,7 +243,33 @@ jQuery(document).ready(function($) {
       });
   });
     
+  function moveup(){
+  
+  }
     
+  // Gallery navigation control ============================================  
+  $('#gallery-nav .scroll-down').click(function(){
+      $('#gallery-nav .list-holder ul').finish().animate({
+          top: '-=123'
+      }, 500, 'swing', function() {
+            // Animation complete.
+      });
+      
+  });
+  
+
+  $('#gallery-nav .scroll-up').click(function(){
+    currentpos = $('#gallery-nav .list-holder ul').position();
+    
+      if(currentpos.top != 0){
+          $('#gallery-nav .list-holder ul').finish().animate({
+              top: '+=123'
+          }, 500, 'swing', function() {
+              // Animation complete.
+          });
+      }
+  });
+  
   /*=============================================================
    * 
    *                    Window resize stuff

@@ -101,27 +101,41 @@ GALLERY STYLES
 *********************/
 
 #gallery-nav {
-    ul {
-        margin: 0;
+    .list-holder {
+        position: relative;
+        overflow-y: hidden;
+        height: 380px;
 
-        li {
-            padding: 0 0 15px 0;
-            cursor: pointer;
+        ul {
+            position: absolute;
+            top: 0;
+            width: 100%;
 
-            .img-overlay-panel {
-                .overlay {
-                    img {
-                        margin: 35%;
-                        width: 28.703703%;
-                        height: auto;
+            li {
+                padding: 0 0 15px 0;
+
+                &:last-child {
+                    padding: 0;
+                }
+
+                cursor: pointer;
+
+                .img-overlay-panel {
+                    .overlay {
+                        img {
+                            margin: 35%;
+                            width: 28.703703%;
+                            height: auto;
+                        }
                     }
                 }
             }
+
+            li.current-img {
+                cursor: default;
+            }
         }
 
-        li.current-img {
-            cursor: default;
-        }
     }
 }
 
