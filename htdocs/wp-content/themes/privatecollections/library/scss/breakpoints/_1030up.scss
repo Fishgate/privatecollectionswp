@@ -106,6 +106,37 @@ GALLERY STYLES
 
         li {
             padding: 0 0 15px 0;
+            cursor: pointer;
+
+            .img-overlay-panel {
+                .overlay {
+                    img {
+                        margin: 35%;
+                        width: 28.703703%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+
+        li.current-img {
+            cursor: default;
         }
     }
+}
+
+#gallery-images {
+    .img-overlay-panel {
+        .overlay {
+            cursor: pointer;
+        }
+    }
+}
+
+img.flex-square {
+    min-width: inherit; //overwriting the .flex class from _base.scss
+
+    //width and height inline styles needs to be explicit pixel values for Firefox and IE to obey these styles.
+    width: auto;
+    height: auto;
 }

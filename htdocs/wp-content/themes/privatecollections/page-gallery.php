@@ -65,38 +65,46 @@
 						</div><!-- close #main -->
                                                 
                                                 <div id="gallery-images" class="m-all t-all d-img">
-                                                        
-                                                        <!--
-                                                        <div id="img1" class="gallery-img">
-                                                            <a href="#myToggle" data-toggle="drop-panel" class="panel" cap-effect="fade">
-                                                                <img class="flex" src="http://placehold.it/950x750" alt="" />
-                                                            </a>
+                                                    
+                                                        <div class="img-overlay-panel">
+                                                            <img class="gallery-image flex flex-square" src="<?php echo get_template_directory_uri() ?>/library/images/temp/_T3V9535.jpg" />
                                                             
-                                                            <div id="myToggle" class="cap-overlay hide">
-                                                                <h2>Cupcakes</h2>
-                                                            </div>   
-                                                        </div>
-                                                        -->
-                                                        
-                                                        <div id="img1" class="gallery-img">
-                                                            <div class="img-overlay-panel">
-                                                                <img class="flex" src="http://placehold.it/950x750" alt="">
-
-                                                                <div class="overlay">
-                                                                    <h2>Cupcakes</h2>
-                                                                </div>
+                                                            <div class="overlay">
+                                                                <p>Pin this piece to your enquiry list.</p>
                                                             </div>
-                                                        </div>
+                                                       </div>
                                                     
                                                 </div>
                                                 
                                                 <div id="gallery-nav" class="m-all t-all d-gallerynav">
                                                     
                                                     <ul>
-                                                        <li><img class="flex" src="http://placehold.it/109x109" /></li>
-                                                        <li><img class="flex" src="http://placehold.it/109x109" /></li>
-                                                        <li><img class="flex" src="http://placehold.it/109x109" /></li>
-                                                        <li><img class="flex" src="http://placehold.it/109x109" /></li>
+                                                        <li class="gallery-thumb current-img" data-img-id="_T3V9535.jpg">
+                                                            <div class="img-overlay-panel" />
+                                                                <img class="flex" src="http://placehold.it/109x109" />
+                                                                
+                                                                <div class="overlay hidden" />
+                                                                    <img src="<?php echo get_template_directory_uri() ?>/library/images/ui/preload.gif" />
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="gallery-thumb" data-img-id="_T3V9536.jpg">
+                                                            <div class="img-overlay-panel" />
+                                                                <img class="flex" src="http://placehold.it/109x109" />
+                                                                
+                                                                <div class="overlay hidden" />
+                                                                    <img src="<?php echo get_template_directory_uri() ?>/library/images/ui/preload.gif" />
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="gallery-thumb" data-img-id="_T3V9537.jpg">
+                                                            <div class="img-overlay-panel" />
+                                                                <img class="flex" src="http://placehold.it/109x109" />
+                                                                <div class="overlay hidden" />
+                                                                    <img src="<?php echo get_template_directory_uri() ?>/library/images/ui/preload.gif" />
+                                                                </div>
+                                                            </div>
+                                                        </li>
                                                     </ul>
                                                     
                                                 </div>

@@ -25,9 +25,12 @@ body {
         -webkit-font-smoothing: antialiased;
 }
 
-
 .hidden {
     display: none;
+}
+
+.opaque {
+    opacity: 0;
 }
  
 
@@ -86,8 +89,9 @@ LAYOUT & GRID STYLES
     top: 0; 
     left: 0; 
     z-index: -998; // 1 layer above supersized
-    width: 4000px; 
-    height: 4000px; 
+    // up to 4k resolution
+    width: 3840px; 
+    height: 2160px; 
     background: black(0.3);
 }
 
@@ -100,12 +104,14 @@ LAYOUT & GRID STYLES
     .overlay{
         position: absolute;
         overflow: hidden;
-        width: 100%;
-        padding-bottom: 100%;
+        width: 100%; //the width of the images change because of different dimensions, this will have to be js controlled.
+        height: 100%;
         background: black(0.8);
         left: 0px;
         top: 0px;
         z-index: 1;
+
+        text-align: center;
     }
 } 
 
@@ -115,8 +121,6 @@ img.flex {
     min-width: 100%;
     height: auto;
 }
-
-
 
 /*********************
 LINK STYLES
@@ -296,16 +300,18 @@ and more scalable.
 GALLERY STYLES
 *********************/
 
-.gallery-img {
+#gallery-images {
     .img-overlay-panel {
-        .overlay{
+        .overlay{            
+            border: solid $pc-yellow 1px;
             display: none;
-        }
-    }
 
-    &:hover {
-        .overlay{
-            display: block;
+            p {
+                margin: 0;
+                padding: 0;
+                color: $pc-yellow;
+                font-size: 1.5em;
+            }
         }
     }
 }
@@ -617,10 +623,10 @@ HOMEPAGE FEATURES
                     width: 100%;
                     text-transform: uppercase;
                     margin-top: 33%;
-                    text-align: center;
                 }
             }
         }
+
     }
 
 }

@@ -101,6 +101,10 @@ function loadGravatars() {
 	}
 } // end function
 
+/*
+* Kyle's functions
+ */
+
 
 /*
  * Put all your regular jQuery in here.
@@ -119,22 +123,136 @@ jQuery(document).ready(function($) {
       maximum   : 95,
       fontRatio : 9
   });
-   
-  //$('.panel').hcaptions();
-
-  // initiate supersized full screen background slideshow    
+  
+  /*=============================================================
+   * 
+   *          Supersized full screen background slideshow    
+   * 
+   =============================================================*/
   viewport = updateViewportDimensions();
   
   var bg_slideshow_data = $.parseJSON(site_data.bg_slideshow);
   
   if (viewport.width >= 768) {
     $.supersized({
-        slide_interval : 10000,		// Length between transitions
-        transition : 1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-        transition_speed : 1000,		// Speed of transition
+        slide_interval : 10000,     // Length between transitions
+        transition : 1,             // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+        transition_speed : 1000,    // Speed of transition
         slides : bg_slideshow_data
     });
   }
   
+  /*=============================================================
+   * 
+   *                      Gallery scripts
+   * 
+   =============================================================*/
+  
+  // overlay toggle ============================================
+  $('#gallery-images').bind({
+      mouseenter: function(){
+          $(this).find('.overlay').stop().fadeIn();
+          
+      },
+      mouseleave: function(){
+          $(this).find('.overlay').stop().fadeOut();
+      }
+  });
+   
+  // does a bunch of scaling, spacing, and resizing on the gallery  ==========================================
+  function align_gallery() {
+      // get the current viewport dimensions
+      viewport = updateViewportDimensions();
+      
+      // max width of the gallery should be the entire width of its containing div
+      gallery_width = $('#gallery-images').width();
+      // mad height of the gallery is a deficiet of the available height of the viewport
+      gallery_height = viewport.height - ($('#inner-header').height() + 80); //accomodate for the space taken up by the header with some additional padding
+      
+      // this should only happen for desktop, the mobile views will be much more simplified
+      if(viewport.width >= 1030){
+        /* setting max width and height to constrain the image proprtionaly to a defined area only works in IE and firefox if they are set as explicit pixel values
+        * it would be ideal to just set this as percentage values in the css but only chrome understands that, so we resort to js to calculate pseudo-percentages
+        */
+        $('#gallery-images .img-overlay-panel .gallery-image').css({
+            'max-width': gallery_width,
+            'max-height': gallery_height
+            /*,'min-height': 500
+             * 
+             * this stops the portrait images from scaling too far but it just messes up the landscape images proprtional scaling.
+             * this is getting far too bloated so for now im going to leave them scaling verticaly until they arent visible anymore...
+             */
+        });
+      }else{
+          // remove the inline styles so the css can take over for the mobile versions
+          $('#gallery-images .img-overlay-panel .gallery-image').removeAttr('style');
+      }
+      
+      // get the current dimensions of the image in the gallery (after all of the fluid css and js)
+      image_width = $('#gallery-images .img-overlay-panel .gallery-image').width();
+      image_height = $('#gallery-images .img-overlay-panel .gallery-image').height();
+      
+      //adjust the width of the overlay to match the image
+      $('#gallery-images .img-overlay-panel .overlay').css({width: image_width});
+            
+      // position the overly text horizontally centered
+      $('#gallery-images .img-overlay-panel .overlay p').css({ 'margin-top': image_height/2 });
+      
+  }
+  
+  //once on page load ============================================
+  if($('#gallery-images').length > 0){
+      align_gallery(); 
+  }
+  
+  // image switching ============================================
+  $('.gallery-thumb').each(function(){
+      $(this).click(function(){
+          this_btn = $(this);
+          
+          // only load new image, cant click the image already displayed
+          if(!this_btn.hasClass('current-img')){
+                // show the preloader over the selected image
+                this_btn.find('.overlay').removeClass('hidden');
+
+                // get the image name from data attribute of menu item
+                image_name = $(this).data('img-id');
+                
+                // construct the full file path using a few variables
+                image_path = site_data.template_dir + '/library/images/temp/' + image_name.toString();
+
+                // change the src attribute of the image to the new selected image (first image of set will be loaded by default)
+                $('img.gallery-image').attr('src', image_path).load(function(){
+                    /**
+                     * use jquery.load() to delay the swapping of the image src until the new resource is ready
+                     */
+                    
+                    // re-align the gallery image overlay text
+                    align_gallery();
+                    
+                    // hide the preloader overlay
+                    this_btn.find('.overlay').addClass('hidden');
+                    
+                    // remove .current-img from all menu items
+                    $('.gallery-thumb').removeClass('current-img');
+                    
+                    // set this menu item as the new current-img
+                    this_btn.addClass('current-img');
+                });          
+          }
+      });
+  });
+    
+    
+  /*=============================================================
+   * 
+   *                    Window resize stuff
+   * 
+   =============================================================*/
+  $(window).resize(function() {
+      if($('#gallery-images').length > 0){
+          align_gallery(); 
+      }
+  });
 
 }); /* end of as page load scripts */
