@@ -144,7 +144,7 @@ jQuery(document).ready(function($) {
   
   /*=============================================================
    * 
-   *                      Gallery scripts
+   *                  Gallery image control
    * 
    =============================================================*/
   
@@ -205,7 +205,12 @@ jQuery(document).ready(function($) {
       align_gallery(); 
   }
   
-  // image switching ============================================
+  /*=============================================================
+   * 
+   *                  Gallery image switching
+   * 
+   =============================================================*/
+  
   $('.gallery-thumb').each(function(){
       $(this).click(function(){
           this_btn = $(this);
@@ -242,33 +247,58 @@ jQuery(document).ready(function($) {
           }
       });
   });
-    
-  function moveup(){
   
-  }
+  /*=============================================================
+   * 
+   *                  Gallery nav control
+   * 
+   =============================================================*/
     
-  // Gallery navigation control ============================================  
-  $('#gallery-nav .scroll-down').click(function(){
-      $('#gallery-nav .list-holder ul').finish().animate({
-          top: '-=123'
-      }, 500, 'swing', function() {
-            // Animation complete.
-      });
+  function scroll_down_limit () {
+      // the total amount of children elements in the list minus the 3 default visible items.
+      total_list_items = $('#gallery-nav .list-holder ul').children().length - 3;
       
-  });
+      // the amount of y-pos each list item occupies
+      spacing_per_item = 123;
+      
+      scroll_position_limit = (total_list_items * spacing_per_item) * -1; // flip to a negative integer
+     
+      return scroll_position_limit;
+  }
   
+  function scrolldown () {
+      currentpos = $('#gallery-nav .list-holder ul').position();
+      currentpos_top = Math.round(currentpos.top); // jquery is sometimes off by a fraction in IE and Firefox, this makes sure we always hit the whole numbers we are conditionaly checking for
+      
+      if(currentpos_top !== scroll_down_limit()){
+        $(this).unbind('click');
 
-  $('#gallery-nav .scroll-up').click(function(){
-    currentpos = $('#gallery-nav .list-holder ul').position();
-    
-      if(currentpos.top != 0){
-          $('#gallery-nav .list-holder ul').finish().animate({
-              top: '+=123'
-          }, 500, 'swing', function() {
-              // Animation complete.
-          });
+        $('#gallery-nav .list-holder ul').finish().animate({
+            top: '-=123'
+        }, 300, 'swing', function() {
+             // rebind itself in the callback of the animation. prevents funky spam clicking bugs
+             $('#gallery-nav .scroll-down').click(scrolldown);
+        });
       }
-  });
+  }
+  
+  function scrollup () {
+    currentpos = $('#gallery-nav .list-holder ul').position();
+    currentpos_top = Math.round(currentpos.top);
+    
+    if(currentpos_top !== 0){
+        $(this).unbind('click');
+
+        $('#gallery-nav .list-holder ul').finish().animate({
+            top: '+=123'
+        }, 300, 'swing', function() {
+            $('#gallery-nav .scroll-up').click(scrollup);
+        });
+    }
+  }
+
+  $('#gallery-nav .scroll-down').click(scrolldown);
+  $('#gallery-nav .scroll-up').click(scrollup);
   
   /*=============================================================
    * 

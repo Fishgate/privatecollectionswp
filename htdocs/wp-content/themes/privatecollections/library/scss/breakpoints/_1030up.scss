@@ -150,7 +150,8 @@ GALLERY STYLES
 img.flex-square {
     min-width: inherit; //overwriting the .flex class from _base.scss
 
-    //width and height inline styles needs to be explicit pixel values for Firefox and IE to obey these styles.
+    //width and height inline styles needs to be explicit pixel values for Firefox and IE to obey these styles. This is done as inline styles using js.
+
     width: auto;
     height: auto;
 }

@@ -150,14 +150,20 @@ them however you see fit.
     }
 
     .d-img {
-        width: 48.739495%;
-        margin-left: 3.6764715%;
+        /*width: 48.739495%;
+        margin-left: 3.6764715%;*/
+
+        width: 60.0490195%;
         float: right;
+        padding-left: 158px;
     }
 
     .d-gallerynav {
-        width: 7.633053%;
-        float: right;
+        /*width: 7.633053%;
+        float: right;*/
+
+        position: absolute;
+        width: 108px;
     }
 
     .feature-d-1of2 {
