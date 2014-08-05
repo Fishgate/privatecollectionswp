@@ -296,9 +296,28 @@ jQuery(document).ready(function($) {
         });
     }
   }
-
+  
   $('#gallery-nav .scroll-down').click(scrolldown);
   $('#gallery-nav .scroll-up').click(scrollup);
+  
+  /*=============================================================
+   * 
+   *                    Layout and Grid
+   * 
+   =============================================================*/
+    function fullheight_bg() {
+        viewport = updateViewportDimensions();
+      
+        currentHeight = $('#main').height();
+        diff = viewport.height - currentHeight;
+        headerheight = $('.header').height();
+      
+        $('#main').css({"height": (currentHeight - headerheight + diff) });
+      
+        //console.log('vp: ' + viewport.height + ', ch: ' + currentHeight + ', diff: ' + diff + ', wat: ' + (currentHeight+diff) );
+    }
+  
+    fullheight_bg();
   
   /*=============================================================
    * 
@@ -306,9 +325,12 @@ jQuery(document).ready(function($) {
    * 
    =============================================================*/
   $(window).resize(function() {
-      if($('#gallery-images').length > 0){
+      /*if($('#gallery-images').length > 0){
           align_gallery(); 
-      }
+      }*/
+      
+      fullheight_bg();
+      
   });
 
 }); /* end of as page load scripts */
