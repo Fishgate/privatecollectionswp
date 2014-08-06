@@ -153,13 +153,30 @@ GALLERY STYLES
     }
 }
 
+
 #gallery-images {
     .img-overlay-panel {
-        .overlay {
+        .overlay{    
             cursor: pointer;
+            z-index: 999;
+            border: solid $pc-yellow 1px;
+            display: none;
+
+            p {
+                margin: 0;
+                padding: 0;
+                color: $pc-yellow;
+                font-size: 1.5em;
+            }
         }
     }
+
+    #carousel {
+        margin-top: 50px;
+    }
 }
+
+
 
 img.flex-square {
     min-width: inherit; //overwriting the .flex class from _base.scss

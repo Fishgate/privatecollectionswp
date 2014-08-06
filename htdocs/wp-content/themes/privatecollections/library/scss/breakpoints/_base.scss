@@ -79,6 +79,10 @@ style a page via class
 LAYOUT & GRID STYLES
 *********************/
 
+.main-dim {
+    background: black(0.6);
+}
+
 .wrap {
 	width: 96%;
         margin: 0 auto;
@@ -300,22 +304,11 @@ and more scalable.
 GALLERY STYLES
 *********************/
 
-#gallery-images {
-    .img-overlay-panel {
-        .overlay{            
-            border: solid $pc-yellow 1px;
-            display: none;
-
-            p {
-                margin: 0;
-                padding: 0;
-                color: $pc-yellow;
-                font-size: 1.5em;
-            }
-        }
+#slider {
+    .flex-direction-nav {
+       display:none !important;
     }
 }
-
 
 /*********************
 POSTS & CONTENT STYLES

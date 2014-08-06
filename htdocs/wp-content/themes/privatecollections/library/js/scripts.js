@@ -102,13 +102,8 @@ function loadGravatars() {
 } // end function
 
 /*
-* Kyle's functions
+* Kyle's stuff
  */
-
-
-/*
- * Put all your regular jQuery in here.
-*/
 jQuery(document).ready(function($) {
 
   /*
@@ -144,73 +139,66 @@ jQuery(document).ready(function($) {
   
   /*=============================================================
    * 
+   *                 Flexslider 2 product slider 
+   * 
+   =============================================================*/
+    
+  //this is probably going to need to be invoked on the fly because the galleries 
+  //are going to be pulled in via ajax... no idea how im going to do that yet
+  
+  // The slider being synced must be initialized first
+  $('#carousel').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      itemWidth: 160,
+      itemMargin: 10,
+      asNavFor: '#slider'
+  });
+
+  $('#slider').flexslider({
+      animation: "fade",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      sync: "#carousel"
+  });
+  
+  
+  /*=============================================================
+   * 
    *                  Gallery image control
    * 
    =============================================================*/
   
   // overlay toggle ============================================
-  $('#gallery-images').bind({
+  $('.slider .img-overlay-panel').bind({
       mouseenter: function(){
-          $(this).find('.overlay').stop().fadeIn();
+          // first center the text verticaly before displaying the overly
+          overlay_height = $('#gallery-images .slider .img-overlay-panel .overlay').height();
+          $('#gallery-images .slider .img-overlay-panel .overlay p').css({ 'margin-top': (overlay_height/2)-10 });
           
+          $(this).find('.overlay').stop().fadeIn();
       },
       mouseleave: function(){
-          $(this).find('.overlay').stop().fadeOut();
+          $(this).find('.overlay').stop().fadeOut();          
       }
   });
-   
-  // does a bunch of scaling, spacing, and resizing on the gallery  ==========================================
-  function align_gallery() {
-      // get the current viewport dimensions
-      viewport = updateViewportDimensions();
-      
-      // max width of the gallery should be the entire width of its containing div
-      gallery_width = $('#gallery-images').width();
-      // mad height of the gallery is a deficiet of the available height of the viewport
-      gallery_height = viewport.height - ($('#inner-header').height() + 80); //accomodate for the space taken up by the header with some additional padding
-      
-      // this should only happen for desktop, the mobile views will be much more simplified
-      if(viewport.width >= 1030){
-        /* setting max width and height to constrain the image proprtionaly to a defined area only works in IE and firefox if they are set as explicit pixel values
-        * it would be ideal to just set this as percentage values in the css but only chrome understands that, so we resort to js to calculate pseudo-percentages
-        */
-        $('#gallery-images .img-overlay-panel .gallery-image').css({
-            'max-width': gallery_width,
-            'max-height': gallery_height
-            /*,'min-height': 500
-             * 
-             * this stops the portrait images from scaling too far but it just messes up the landscape images proprtional scaling.
-             * this is getting far too bloated so for now im going to leave them scaling verticaly until they arent visible anymore...
-             */
-        });
-      }else{
-          // remove the inline styles so the css can take over for the mobile versions
-          $('#gallery-images .img-overlay-panel .gallery-image').removeAttr('style');
-      }
-      
-      // get the current dimensions of the image in the gallery (after all of the fluid css and js)
-      image_width = $('#gallery-images .img-overlay-panel .gallery-image').width();
-      image_height = $('#gallery-images .img-overlay-panel .gallery-image').height();
-      
-      //adjust the width of the overlay to match the image
-      $('#gallery-images .img-overlay-panel .overlay').css({width: image_width});
-            
-      // position the overly text horizontally centered
-      $('#gallery-images .img-overlay-panel .overlay p').css({ 'margin-top': image_height/2 });
-      
-  }
   
-  //once on page load ============================================
-  if($('#gallery-images').length > 0){
-      align_gallery(); 
-  }
-  
+  // overlay click ==============================================
+  $('.img-overlay-panel .overlay').click(function(){
+      current_prod = $(this).parent().data('prod-code');
+      
+      console.log(current_prod); //use this to set the session to be used on contact form
+  });
+ 
   /*=============================================================
    * 
    *                  Gallery image switching
    * 
    =============================================================*/
-  
+  /*
   $('.gallery-thumb').each(function(){
       $(this).click(function(){
           this_btn = $(this);
@@ -228,9 +216,9 @@ jQuery(document).ready(function($) {
 
                 // change the src attribute of the image to the new selected image (first image of set will be loaded by default)
                 $('img.gallery-image').attr('src', image_path).load(function(){
-                    /**
-                     * use jquery.load() to delay the swapping of the image src until the new resource is ready
-                     */
+                    
+                    //use jquery.load() to delay the swapping of the image src until the new resource is ready
+                    
                     
                     // re-align the gallery image overlay text
                     align_gallery();
@@ -247,13 +235,13 @@ jQuery(document).ready(function($) {
           }
       });
   });
-  
+  */
   /*=============================================================
    * 
    *                  Gallery nav control
    * 
    =============================================================*/
-    
+  /*
   function scroll_down_limit () {
       // the total amount of children elements in the list minus the 3 default visible items.
       total_list_items = $('#gallery-nav .list-holder ul').children().length - 3;
@@ -299,7 +287,8 @@ jQuery(document).ready(function($) {
   
   $('#gallery-nav .scroll-down').click(scrolldown);
   $('#gallery-nav .scroll-up').click(scrollup);
-  
+  */
+ 
   /*=============================================================
    * 
    *                    Layout and Grid
@@ -312,7 +301,7 @@ jQuery(document).ready(function($) {
        diff = viewport.height - currentHeight;
        headerheight = $('.header').height();
      
-       visible = $('#album-features-thumbs').visible();
+       visible = $('#content-measure').visible();
       
         if(!visible){
             $('#main').removeAttr('style');
@@ -323,27 +312,22 @@ jQuery(document).ready(function($) {
        //console.log('vp: ' + viewport.height + ', ch: ' + currentHeight + ', diff: ' + diff + ', wat: ' + (currentHeight+diff) );
    }
   
-   fullheight_bg();
-  
-  // Select the detection type.
-  
-  
+  if($('#content-measure').length > 0){
+      fullheight_bg();
+      
+      // apply the dim background to pages which have the #content-measure container div
+      $('#main').addClass('main-dim');
+  }
   
   /*=============================================================
    * 
    *                    Window resize stuff
    * 
    =============================================================*/
-  $(window).resize(function() {
-      /*if($('#gallery-images').length > 0){
-          align_gallery(); 
-      }*/
-      
-      fullheight_bg();
-      
-      /*visible = $('#album-features-thumbs').visible();
-      
-      console.log(visible);*/
+  $(window).resize(function() {      
+      if($('#content-measure').length > 0){
+          fullheight_bg();
+      }
       
   });
 
