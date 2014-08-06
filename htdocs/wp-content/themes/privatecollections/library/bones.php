@@ -130,7 +130,7 @@ function bones_scripts_and_styles() {
 
 		// modernizr (without media query polyfill)
 		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
-
+                
                 //register jquery supersized styles - http://buildinternet.com/project/supersized
                 wp_register_style( 'supersized-styles', get_stylesheet_directory_uri() . '/library/css/supersized.css', array(), '', 'all');
                 wp_register_style( 'supersized-shuttertheme-styles', get_stylesheet_directory_uri() . '/library/css/supersized.shutter.css', array( 'supersized-styles' ), '', 'all');
@@ -153,6 +153,9 @@ function bones_scripts_and_styles() {
                 // include FlowType.js (http://simplefocus.com/flowtype/)
                 wp_register_script( 'flowtype-js', get_stylesheet_directory_uri() . '/library/js/libs/flowtype.min.js', array( 'jquery' ), '', true);
                 
+                // register jquery-visible plugin (https://github.com/teamdf/jquery-visible/)
+                wp_register_script( 'jquery-visible', get_stylesheet_directory_uri() . '/library/js/libs/jquery.visible.min.js', array( 'jquery' ), '', true );
+                
                 // adding scripts file in the footer
 		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.min.js', array( 'jquery', 'supersized-js', 'supersized-shuttertheme-js' ), '', true );
 
@@ -171,6 +174,7 @@ function bones_scripts_and_styles() {
 		and your site will load faster.
 		*/
 		wp_enqueue_script( 'jquery' );
+                wp_enqueue_script( 'jquery-visible' );
                 wp_enqueue_script( 'supersized-js' );
                 wp_enqueue_script( 'supersized-shuttertheme-js' );
                 wp_enqueue_script( 'flowtype-js' );

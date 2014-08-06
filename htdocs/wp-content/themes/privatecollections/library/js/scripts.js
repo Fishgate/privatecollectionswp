@@ -305,19 +305,29 @@ jQuery(document).ready(function($) {
    *                    Layout and Grid
    * 
    =============================================================*/
-    function fullheight_bg() {
-        viewport = updateViewportDimensions();
+   function fullheight_bg() {
+       viewport = updateViewportDimensions();
+     
+       currentHeight = $('#main').height();
+       diff = viewport.height - currentHeight;
+       headerheight = $('.header').height();
+     
+       visible = $('#album-features-thumbs').visible();
       
-        currentHeight = $('#main').height();
-        diff = viewport.height - currentHeight;
-        headerheight = $('.header').height();
-      
-        $('#main').css({"height": (currentHeight - headerheight + diff) });
-      
-        //console.log('vp: ' + viewport.height + ', ch: ' + currentHeight + ', diff: ' + diff + ', wat: ' + (currentHeight+diff) );
-    }
+        if(!visible){
+            $('#main').removeAttr('style');
+        }else{
+            $('#main').css({"height": (currentHeight - headerheight + diff) });
+        }
+     
+       //console.log('vp: ' + viewport.height + ', ch: ' + currentHeight + ', diff: ' + diff + ', wat: ' + (currentHeight+diff) );
+   }
   
-    fullheight_bg();
+   fullheight_bg();
+  
+  // Select the detection type.
+  
+  
   
   /*=============================================================
    * 
@@ -330,6 +340,10 @@ jQuery(document).ready(function($) {
       }*/
       
       fullheight_bg();
+      
+      /*visible = $('#album-features-thumbs').visible();
+      
+      console.log(visible);*/
       
   });
 
