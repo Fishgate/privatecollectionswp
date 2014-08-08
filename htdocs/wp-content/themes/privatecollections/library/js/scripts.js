@@ -154,13 +154,14 @@ jQuery(document).ready(function($) {
       slideshow: false,
       itemWidth: 160,
       itemMargin: 10,
-      asNavFor: '#slider'
+      asNavFor: '#slider',
+      prevText: '',
+      nextText: ''
   });
 
-  $('#slider').flexslider({
-      animation: "fade",
-      controlNav: false,
-      animationLoop: false,
+  $('#slider').flexslider({     
+      directionNav: false,
+      controlNav: false,      
       slideshow: false,
       sync: "#carousel"
   });
@@ -302,12 +303,12 @@ jQuery(document).ready(function($) {
        headerheight = $('.header').height();
      
        visible = $('#content-measure').visible();
-      
-        if(!visible){
-            $('#main').removeAttr('style');
-        }else{
-            $('#main').css({"height": (currentHeight - headerheight + diff) });
-        }
+       
+       if(!visible){
+           $('#main').removeAttr('style');
+       }else{
+           $('#main').css({"height": (currentHeight - headerheight + diff) });
+       }
      
        //console.log('vp: ' + viewport.height + ', ch: ' + currentHeight + ', diff: ' + diff + ', wat: ' + (currentHeight+diff) );
    }
@@ -317,7 +318,27 @@ jQuery(document).ready(function($) {
       
       // apply the dim background to pages which have the #content-measure container div
       $('#main').addClass('main-dim');
+      $('.header-bg').css('background', 'rgba(0,0,0,0.87');
   }
+  
+  $('.category-dropdown').click(function() {
+        state =$(this).data('state');
+        
+        if(state === 'closed') {
+            $(this).data('state', 'open');
+            $('.category-dropdown ul').removeClass('invisible');
+            $('.category-dropdown div h2 i').removeClass('fa-angle-down').addClass('fa-angle-up');
+        }
+        else if(state === 'open'){
+            $(this).data('state', 'closed');
+            $('.category-dropdown ul').addClass('invisible');
+            $('.category-dropdown div h2 i').removeClass('fa-angle-up').addClass('fa-angle-down');
+        }
+      
+  });
+  
+  $(".nano").nanoScroller();
+  //$(".nano").nanoScroller({ destroy: true });
   
   /*=============================================================
    * 
@@ -327,6 +348,14 @@ jQuery(document).ready(function($) {
   $(window).resize(function() {      
       if($('#content-measure').length > 0){
           fullheight_bg();
+      }
+      
+      //
+      
+      viewport = updateViewportDimensions();
+      
+      if (viewport.width <= 1030) {
+          $(".nano").nanoScroller({ destroy: true });
       }
       
   });

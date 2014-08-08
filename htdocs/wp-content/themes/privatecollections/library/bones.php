@@ -131,6 +131,12 @@ function bones_scripts_and_styles() {
 		// modernizr (without media query polyfill)
 		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
                 
+                // register nanoScroller.js styles (http://jamesflorentino.github.io/nanoScrollerJS/)
+                wp_register_style( 'nanoScroller-styles', get_stylesheet_directory_uri() . '/library/css/nanoscroller.css', array(), '', 'screen and (min-width: 1030px)' );                
+                
+                // register font awesome styles (http://fortawesome.github.io/Font-Awesome/)
+                wp_register_style( 'font-awesome-styles', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), '', 'all' );
+                
                 // register flexslider 2 styles (http://flexslider.woothemes.com/)
                 wp_register_style( 'flexslider-styles', get_stylesheet_directory_uri() . '/library/css/flexslider.css', array(), '', 'all' );
                 
@@ -148,16 +154,19 @@ function bones_scripts_and_styles() {
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
 		  wp_enqueue_script( 'comment-reply' );
     }
-
+        
+                // register nanoScroller.js scripts (http://jamesflorentino.github.io/nanoScrollerJS/)
+                wp_register_script( 'nanoScroller-js', get_stylesheet_directory_uri() . '/library/js/libs/jquery.nanoscroller.min.js', array('jquery'), '', true );
+    
                 // register flexslider 2 scripts (http://flexslider.woothemes.com/)
-                wp_register_script('flexslider-js', get_stylesheet_directory_uri() . '/library/js/libs/jquery.flexslider.min.js', array('jquery'), '', true);
+                wp_register_script( 'flexslider-js', get_stylesheet_directory_uri() . '/library/js/libs/jquery.flexslider.min.js', array('jquery'), '', true );
     
                 // including jquery supersized scripts - http://buildinternet.com/project/supersized
-                wp_register_script( 'supersized-js', get_stylesheet_directory_uri() . '/library/js/libs/supersized.3.2.7.min.js', array( 'jquery' ), '', true);
-                wp_register_script( 'supersized-shuttertheme-js', get_stylesheet_directory_uri() . '/library/js/libs/supersized.shutter.min.js', array( 'jquery', 'supersized-js' ), '', true);
+                wp_register_script( 'supersized-js', get_stylesheet_directory_uri() . '/library/js/libs/supersized.3.2.7.min.js', array( 'jquery' ), '', true );
+                wp_register_script( 'supersized-shuttertheme-js', get_stylesheet_directory_uri() . '/library/js/libs/supersized.shutter.min.js', array( 'jquery', 'supersized-js' ), '', true );
                 
                 // include FlowType.js (http://simplefocus.com/flowtype/)
-                wp_register_script( 'flowtype-js', get_stylesheet_directory_uri() . '/library/js/libs/flowtype.min.js', array( 'jquery' ), '', true);
+                wp_register_script( 'flowtype-js', get_stylesheet_directory_uri() . '/library/js/libs/flowtype.min.js', array( 'jquery' ), '', true );
                 
                 // register jquery-visible plugin (https://github.com/teamdf/jquery-visible/)
                 wp_register_script( 'jquery-visible', get_stylesheet_directory_uri() . '/library/js/libs/jquery.visible.min.js', array( 'jquery' ), '', true );
@@ -167,9 +176,11 @@ function bones_scripts_and_styles() {
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'bones-modernizr' );
+                wp_enqueue_style( 'font-awesome-styles' );
                 wp_enqueue_style( 'flexslider-styles' );
                 wp_enqueue_style( 'supersized-styles' );
                 wp_enqueue_style( 'supersized-shuttertheme-styles' );
+                wp_enqueue_style( 'nanoScroller-styles' );
 		wp_enqueue_style( 'bones-stylesheet' );
 		wp_enqueue_style( 'bones-ie-only' );
 
@@ -181,11 +192,12 @@ function bones_scripts_and_styles() {
 		and your site will load faster.
 		*/
 		wp_enqueue_script( 'jquery' );
-                wp_enqueue_script('flexslider-js');
+                wp_enqueue_script( 'flexslider-js' );
                 wp_enqueue_script( 'jquery-visible' );
                 wp_enqueue_script( 'supersized-js' );
                 wp_enqueue_script( 'supersized-shuttertheme-js' );
                 wp_enqueue_script( 'flowtype-js' );
+                wp_enqueue_script( 'nanoScroller-js' );
 		wp_enqueue_script( 'bones-js' );
                 
                 // make some php data available to scripts.js                

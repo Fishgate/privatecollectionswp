@@ -142,6 +142,11 @@ them however you see fit.
 
 /* Landscape to small desktop */
 @media (min-width: 1030px) {
+    .d-gall-thumb-1-of-4 {
+        width: 23.387096%;
+        float: left;   
+    }
+
     .d-main {
         width: 41.471571%;
         margin-left: 2.675585%;
@@ -155,18 +160,10 @@ them however you see fit.
         padding: 40px 0 0 0;
     }
 
-    .d-gallerynav {
-        /*width: 7.633053%;
-        float: right;*/
-
-        position: absolute;
-        width: 108px;
-    }
-
     .feature-d-1of2 {
         width: 48%;
         float: left;
-        margin: 0 4% 0 0;
+        margin: 25px 4% 25px 0;
     }
 
     .album-d-1of5 {

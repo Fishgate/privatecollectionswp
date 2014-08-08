@@ -267,7 +267,6 @@
   //
 
   a  { 
-
     text-decoration:none; 
     display: block; 
     width: 40px; 
@@ -286,18 +285,14 @@
 
     &:before  { 
 
-      //font-family: "flexslider-icon"; 
+      font-family: FontAwesome; 
       font-size: 27px;
       display: inline-block; 
-      //content: '\f001';
-      content: '<';
-
+      content: '\f104';
     }
 
     &.flex-next:before { 
-
-      //content: '\f002';
-      content: '>'
+      content: '\f105';
 
     }
 
@@ -310,7 +305,7 @@
 
   .flex-prev { 
     //left: -50px;
-    left: 10px;
+    left: 0;
     opacity: 1;
   }
 
@@ -322,7 +317,7 @@
   .flex-next { 
     
     //right: -50px; 
-    right: 10px;
+    right: 0;
     text-align: right;
     opacity: 1;
     
@@ -337,39 +332,12 @@
     &:hover {
         color: @pc-yellow;
     }
+
+    &:visited {
+        color: @pc-grey;
+    }   
   }
 
-/*
-  .flexslider:hover &{
-    
-    .flex-prev { 
-
-      opacity: 0.7; 
-      left: 10px;
-
-      &:hover{
-        
-        opacity: 1;
-
-      }
-
-    }
-    
-    .flex-next { 
-
-      opacity: 0.7; 
-      right: 10px;
-
-      &:hover{
-        
-        opacity: 1;
-        
-      }
-
-    }
-
-  }
-*/
 
   //
   // Disabled

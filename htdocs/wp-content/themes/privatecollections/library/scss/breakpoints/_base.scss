@@ -29,6 +29,10 @@ body {
     display: none;
 }
 
+.invisible {
+    visibility: hidden;
+}
+
 .opaque {
     opacity: 0;
 }
@@ -79,6 +83,8 @@ style a page via class
 LAYOUT & GRID STYLES
 *********************/
 
+
+
 .main-dim {
     background: black(0.6);
 }
@@ -119,11 +125,48 @@ LAYOUT & GRID STYLES
     }
 } 
 
-
 img.flex {
     max-width: 100%; 
     min-width: 100%;
     height: auto;
+}
+
+.category-dropdown {
+    background: black(0.7);    
+    margin-bottom: 15px;
+    cursor: pointer;
+
+    h2, ul { 
+        margin: 0; 
+    }
+
+    h2 {
+        padding: 20px;
+    }
+
+    div {
+        position: relative;
+    
+        ul {
+            position: absolute;
+            width: 100%;
+            padding: 0 20px 20px 20px;
+            background: black(0.7);
+
+            li {
+                text-transform: uppercase;
+            }
+            
+            a {
+                text-decoration: none;
+                color: $pc-grey;
+
+                &:hover, &:active {
+                    color: $pc-yellow;
+                }
+            }
+        }
+    }
 }
 
 /*********************
@@ -213,8 +256,8 @@ HEADER STYLES
         }
 }
 
-.header-bg {
-    background: black(0.87);
+.header-bg {    
+    background: black(0.7);
 }
 
 /*********************
@@ -304,12 +347,6 @@ and more scalable.
 GALLERY STYLES
 *********************/
 
-#slider {
-    .flex-direction-nav {
-       display:none !important;
-    }
-}
-
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -321,7 +358,7 @@ POSTS & CONTENT STYLES
 
 		.hentry {
 			background: black(0.7);
-			margin-bottom: 25px;
+			//margin-bottom: 25px;
 
 			header {
 				border-bottom: 1px solid $light-gray;
@@ -567,7 +604,6 @@ HOMEPAGE FEATURES
 *********************/
 .feature {
     background: black(0.7);
-    margin-bottom: 25px;
 
     p.date-stamp {
         font-size: 1.182em;
