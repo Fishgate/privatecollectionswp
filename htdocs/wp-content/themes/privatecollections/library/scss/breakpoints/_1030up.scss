@@ -17,10 +17,6 @@ LAYOUT & GRID STYLES
     width: 93.4375%;
 }
 
-.nano { width: 100%; max-height:590px; }
-.nano .nano-content { padding: 10px; }
-.nano .nano-pane   { background: #888; }
-.nano .nano-slider { background: #111; }
 
 /*********************
 HEADER STYLES
@@ -29,6 +25,14 @@ HEADER STYLES
 .header-bg {
     padding: 10px 20px;
 }
+
+#gallery-thumbs {
+    position:relative;
+    height: 590px;
+    overflow: hidden;
+}
+
+
 
 /*
 .d-pc-logo {

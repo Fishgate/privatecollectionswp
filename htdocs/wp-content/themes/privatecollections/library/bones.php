@@ -131,8 +131,8 @@ function bones_scripts_and_styles() {
 		// modernizr (without media query polyfill)
 		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
                 
-                // register nanoScroller.js styles (http://jamesflorentino.github.io/nanoScrollerJS/)
-                wp_register_style( 'nanoScroller-styles', get_stylesheet_directory_uri() . '/library/css/nanoscroller.css', array(), '', 'screen and (min-width: 1030px)' );                
+                // http://noraesae.github.io/perfect-scrollbar/
+                wp_register_style( 'perfect-scrollbar-styles', get_stylesheet_directory_uri() . '/library/css/perfect-scrollbar.min.css', array(), '', 'screen and (min-width: 1030px)' );                
                 
                 // register font awesome styles (http://fortawesome.github.io/Font-Awesome/)
                 wp_register_style( 'font-awesome-styles', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), '', 'all' );
@@ -154,9 +154,11 @@ function bones_scripts_and_styles() {
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
 		  wp_enqueue_script( 'comment-reply' );
     }
-        
-                // register nanoScroller.js scripts (http://jamesflorentino.github.io/nanoScrollerJS/)
-                wp_register_script( 'nanoScroller-js', get_stylesheet_directory_uri() . '/library/js/libs/jquery.nanoscroller.min.js', array('jquery'), '', true );
+                // jquery.mousewheel.js
+                wp_register_script('jquery-mousewheel-js', get_stylesheet_directory_uri() . '/library/js/libs/jquery.mousewheel.min.js', array('jquery'), '', true );
+                
+                // http://noraesae.github.io/perfect-scrollbar/
+                wp_register_script( 'perfect-scrollbar-js', get_stylesheet_directory_uri() . '/library/js/libs/perfect-scrollbar.min.js', array('jquery', 'jquery-mousewheel-js'), '', true );
     
                 // register flexslider 2 scripts (http://flexslider.woothemes.com/)
                 wp_register_script( 'flexslider-js', get_stylesheet_directory_uri() . '/library/js/libs/jquery.flexslider.min.js', array('jquery'), '', true );
@@ -180,24 +182,25 @@ function bones_scripts_and_styles() {
                 wp_enqueue_style( 'flexslider-styles' );
                 wp_enqueue_style( 'supersized-styles' );
                 wp_enqueue_style( 'supersized-shuttertheme-styles' );
-                wp_enqueue_style( 'nanoScroller-styles' );
+                wp_enqueue_style( 'perfect-scrollbar-styles' );
 		wp_enqueue_style( 'bones-stylesheet' );
 		wp_enqueue_style( 'bones-ie-only' );
 
 		$wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
-
+ 
 		/*
 		I recommend using a plugin to call jQuery
 		using the google cdn. That way it stays cached
 		and your site will load faster.
 		*/
 		wp_enqueue_script( 'jquery' );
+                wp_enqueue_script( 'jquery-mousewheel-js' );
                 wp_enqueue_script( 'flexslider-js' );
                 wp_enqueue_script( 'jquery-visible' );
                 wp_enqueue_script( 'supersized-js' );
                 wp_enqueue_script( 'supersized-shuttertheme-js' );
                 wp_enqueue_script( 'flowtype-js' );
-                wp_enqueue_script( 'nanoScroller-js' );
+                wp_enqueue_script( 'perfect-scrollbar-js' );
 		wp_enqueue_script( 'bones-js' );
                 
                 // make some php data available to scripts.js                

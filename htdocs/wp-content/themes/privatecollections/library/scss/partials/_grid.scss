@@ -144,7 +144,12 @@ them however you see fit.
 @media (min-width: 1030px) {
     .d-gall-thumb-1-of-4 {
         width: 23.387096%;
-        float: left;   
+        float: left;
+        margin: 0 2.075268% 2.075268% 0;
+
+        &:nth-child(4n) {
+            margin-right: 0;
+        }
     }
 
     .d-main {

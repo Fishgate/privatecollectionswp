@@ -135,7 +135,7 @@ img.flex {
     background: black(0.7);    
     margin-bottom: 15px;
     cursor: pointer;
-
+    
     h2, ul { 
         margin: 0; 
     }
@@ -152,6 +152,7 @@ img.flex {
             width: 100%;
             padding: 0 20px 20px 20px;
             background: black(0.7);
+            z-index: 999;
 
             li {
                 text-transform: uppercase;

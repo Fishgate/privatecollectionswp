@@ -78,24 +78,42 @@
 
                                                                 <?php endif; ?>
                                                         
-                                                                <div id="gallery-thumbs" class="nano m-all t-all d-all cf">
-                                                                    <div class="nano-content">
-                                                                        <!--<div class="d-gall-thumb-1-of-4"><a href="#"><img src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img src="http://placehold.it/145x145" /></a></div>-->
-                                                                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rhoncus commodo metus, eget gravida tortor scelerisque eu. Pellentesque accumsan eleifend velit, eget tincidunt tellus pretium sed. Aliquam lectus ante, vulputate at sollicitudin ut, convallis eget lectus. Aenean viverra, nisi eget dignissim auctor, velit lorem hendrerit justo, eu ultricies ligula ligula sit amet tortor. Aenean lacinia nibh at orci pellentesque, sit amet porta erat convallis. Vivamus mollis neque at velit vehicula eleifend. Sed condimentum erat a magna gravida, ac tincidunt arcu tincidunt. Nunc quis turpis vulputate, mattis nunc id, hendrerit enim. Vivamus sed velit vitae massa semper venenatis in in risus. Mauris vitae est tincidunt, suscipit sem sed, volutpat arcu. Pellentesque sapien tortor, egestas vel dignissim quis, pharetra sed massa. Suspendisse et pretium velit, non pharetra massa. Etiam convallis ultricies ipsum ut placerat.
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor nunc et rutrum commodo. Sed fringilla ante eros, in porta est eleifend vitae. Aliquam ac justo et augue porta gravida ut vel elit. Donec ut risus erat. Fusce lobortis eu lectus eu volutpat. Nunc in risus eget diam volutpat elementum. Cras convallis euismod molestie. Nam in eleifend elit. In eget placerat dui, vel dictum ante. Cras interdum tortor urna, eget viverra massa facilisis nec. In in urna ligula. Mauris sodales mattis mauris, vel varius risus sollicitudin non. Sed ullamcorper felis ut velit gravida ultricies. Morbi porta volutpat elit, a gravida arcu adipiscing vitae.
-
-    Duis nec massa lacinia, blandit nisi eget, molestie erat. Donec molestie laoreet tincidunt. Quisque pulvinar eros sit amet est placerat, sed elementum ipsum convallis. Suspendisse nisl justo, sagittis rhoncus mauris sed, eleifend sagittis nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla ullamcorper congue eros. Ut et erat lobortis, tincidunt lectus vitae, lacinia leo. Curabitur bibendum ultricies nulla vel ornare.
-
-    Nullam tincidunt massa a tempus pellentesque. Praesent mattis ultrices elit in convallis. Nunc id risus quam. In eget accumsan leo. Duis gravida tincidunt lorem, vel commodo libero aliquam et. Vestibulum eget rhoncus tortor. Cras eget lacinia lectus. Mauris semper neque at velit tincidunt, vitae volutpat lectus semper. Aenean ac magna tristique, fringilla nisi tincidunt, dignissim magna. Integer blandit enim nisi, vitae iaculis magna malesuada non. Nulla vitae erat a nibh pretium auctor. Praesent id volutpat mauris. Etiam mattis nibh et placerat rutrum. In quis elit ut lacus blandit mattis vel sit amet mi. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-
-    In pulvinar porttitor odio a fermentum. Sed eget pellentesque nisi, non lobortis neque. Vivamus convallis tristique dolor ut rutrum. Duis diam purus, consequat at neque vel, tristique sagittis nisl. Nam velit sapien, venenatis vel ante ac, tincidunt molestie diam. Vestibulum consequat velit justo, sit amet porttitor libero tincidunt eget. Morbi tincidunt, tellus ut egestas gravida, urna sem vestibulum nibh, in tincidunt lectus tellus quis ante. Donec et fringilla diam. //END//</div>
+                                                                <div id="gallery-thumbs" class="m-all t-all d-all cf">
+                                                                    <div id="thumbs-container">
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
                                                                     </div>
                                                                 </div>
                                                     

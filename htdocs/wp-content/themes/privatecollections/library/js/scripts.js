@@ -337,27 +337,34 @@ jQuery(document).ready(function($) {
       
   });
   
-  $(".nano").nanoScroller();
-  //$(".nano").nanoScroller({ destroy: true });
-  
+  // enable scroller for desktop queries
+  if (viewport.width >= 1030) {
+       $('#gallery-thumbs').perfectScrollbar({
+           suppressScrollX: true
+                  
+       });
+  }
+   
   /*=============================================================
    * 
    *                    Window resize stuff
    * 
    =============================================================*/
-  $(window).resize(function() {      
+  $(window).resize(function() {
+      viewport = updateViewportDimensions();
+      
       if($('#content-measure').length > 0){
           fullheight_bg();
       }
       
-      //
-      
-      viewport = updateViewportDimensions();
-      
-      if (viewport.width <= 1030) {
-          $(".nano").nanoScroller({ destroy: true });
+      /*
+      if (viewport.width < 1030) {
+          
+      } else {         
+          
       }
-      
+      */
+     
   });
 
 }); /* end of as page load scripts */
