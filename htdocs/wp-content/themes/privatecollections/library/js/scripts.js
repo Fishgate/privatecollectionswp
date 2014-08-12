@@ -339,10 +339,7 @@ jQuery(document).ready(function($) {
   
   // enable scroller for desktop queries
   if (viewport.width >= 1030) {
-       $('#gallery-thumbs').perfectScrollbar({
-           suppressScrollX: true
-                  
-       });
+       $('#gallery-thumbs').perfectScrollbar({ suppressScrollX: true });
   }
    
   /*=============================================================

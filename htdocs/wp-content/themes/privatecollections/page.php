@@ -5,7 +5,7 @@
 				<div id="inner-content" class="wrap cf">
 
 						<div id="main" class="m-all t-all d-main cf" role="main">
-
+                                                    <div id="content-measure" class="cf">
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
@@ -57,7 +57,7 @@
 							<?php endif; ?>
 
 						</div>
-                                    
+                                    </div>
 				</div>
 
 			</div>

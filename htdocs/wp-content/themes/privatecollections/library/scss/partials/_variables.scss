@@ -20,13 +20,13 @@ http://0to255.com/
 $pc-grey:           #a3a3a3;
 $pc-yellow:         #d0ac2e;
 
-$alert-yellow:      #ebe16f;
-$alert-red:         #fbe3e4;
-$alert-green:       #e6efc2;
-$alert-blue:        #d5edf8;
-
-$black:             #323944;
+$black:             #000;
 $white:             #fff;
+
+$alert-yellow:      #ebe16f;
+$alert-red:         $white;
+$alert-green:       $white;
+$alert-blue:        #d5edf8;
 
 $light-gray:        #f8f9fa;
 $gray:              #eaedf2;

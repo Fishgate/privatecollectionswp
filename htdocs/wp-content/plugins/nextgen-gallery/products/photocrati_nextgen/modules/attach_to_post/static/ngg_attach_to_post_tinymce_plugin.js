@@ -1,10 +1,6 @@
 // Self-executing function to create and register the TinyMCE plugin
 (function(siteurl) {
 
-    tinyMCE.addI18n('en.ngg_attach_to_post', {
-        title: 'Attach NextGEN Gallery to Post'
-    });
-
 	// Create the plugin. We'll register it afterwards
 	tinymce.create('tinymce.plugins.NextGEN_AttachToPost', {
 
@@ -136,5 +132,5 @@
 	});
 
 	// Register plugin
-	//tinymce.PluginManager.add('NextGEN_AttachToPost', tinymce.plugins.NextGEN_AttachToPost);
+	tinymce.PluginManager.add('NextGEN_AttachToPost', tinymce.plugins.NextGEN_AttachToPost);
 })(photocrati_ajax.wp_site_url);
