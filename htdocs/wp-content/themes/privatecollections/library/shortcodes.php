@@ -20,16 +20,14 @@ function pc_contact_form() {
     ob_start();
     ?>
 
-    <div>
-        <form>
-            <input class="error" value="Name:" type="text">
-            <input class="success" value="Name:" type="text">
-            <input disabled="disabled" value="Name:" type="text">
-            <input value="Email Address:" type="text">
-            <textarea>Message:</textarea>
-        </form>
-    </div>
-
+    <form id="pc-contact-form">
+        <input class="m-all t-1of2 d-1of2" value="Name:" type="text">
+        <input class="m-all t-1of2 d-1of2 last" value="Email Address:" type="text">
+        <div class="clearfix"></div>
+        <textarea class="d-all t-all m-all">Message:</textarea>
+        <input class="submit-btn" type="submit" value="Submit" /></div>
+    </form>
+        
     <?php    
     $output = ob_get_contents();
     ob_end_clean();

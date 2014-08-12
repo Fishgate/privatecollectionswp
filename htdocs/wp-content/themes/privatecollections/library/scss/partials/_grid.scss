@@ -27,7 +27,7 @@ over your project's layout.
 // using a mixin since we can't use placeholder selectors
 @mixin grid-col {
   float: left;
-  padding-right: 0.75em;
+  //padding-right: 0.75em;
 
 }
 
@@ -142,6 +142,7 @@ them however you see fit.
 
 /* Landscape to small desktop */
 @media (min-width: 1030px) {
+    // custom grid, for specific page templates like the home page
     .d-gall-thumb-1-of-4 {
         width: 23.387096%;
         float: left;
@@ -176,7 +177,8 @@ them however you see fit.
         float: left;
         margin: 0 2% 0 0;
     }
-
+    
+    //generic grid, for every day use in shortcodes and the likes thereof
     .d-all  {
       @include grid-col;
       width: 100%;
@@ -185,7 +187,8 @@ them however you see fit.
 
     .d-1of2 {
       @include grid-col;
-      width: 50%;
+      width: 48.5%;
+      margin: 0 3% 0 0;
     }
 
     .d-1of3 {

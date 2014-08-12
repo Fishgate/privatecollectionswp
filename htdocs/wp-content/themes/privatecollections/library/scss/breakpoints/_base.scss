@@ -355,8 +355,6 @@ POSTS & CONTENT STYLES
 
 #content {
 
-}
-
 		.hentry {
 			background: black(0.7);
 			//margin-bottom: 25px;
@@ -599,6 +597,11 @@ POSTS & CONTENT STYLES
 	.tags {
 		margin: 0;
 	}
+
+        form#pc-contact-form {
+            padding: 0 0 50px 0;
+        }
+}
 
 /*********************
 HOMEPAGE FEATURES
@@ -907,7 +910,7 @@ COMMENT STYLES
 
 	/* comment reply link */
 	.comment-reply-link {
-		@extend .blue-btn;
+		@extend .submit-btn;
 		font-size: 0.9em;
 		float: right;
 
@@ -963,7 +966,7 @@ COMMENT FORM STYLES
 
 	/* comment submit button */
 	#submit {
-		@extend .blue-btn;
+		@extend .submit-btn;
 		float: right;
 		font-size: 1em;
 	}

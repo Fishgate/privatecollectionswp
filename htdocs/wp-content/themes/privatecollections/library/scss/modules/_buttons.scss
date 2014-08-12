@@ -25,24 +25,21 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 *********************/
 
 %btn {
-  display: inline-block;
+  display: block;
   position: relative;
-  font-family: $sans-serif;
+  font-family: $opensans;
   text-decoration: none;
-  color: $white;
-  font-size: 0.9em;
-  font-size: 34px;
-  line-height: 34px;
+  text-transform: uppercase;
+  color: $black;
+  font-size: 1.4em;
   font-weight: normal;
-  padding: 0 24px;
-  border-radius: 4px;
+  padding: 12px 30px;
   border: 0;
   cursor: pointer;
   @include transition(background-color 0.14s ease-in-out);
 
   // hovering on the btn
   &:hover, &:focus {
-    color: $white;
     text-decoration: none;
   } // end hover
 
@@ -58,17 +55,19 @@ An example button.
 You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
-.blue-btn {
+
+.submit-btn {
   @extend %btn; // here we load the btn defaults
-  background-color: $blue;
+  background-color: $pc-yellow;
+  margin: 0 auto;
 
   &:hover,
   &:focus {
-    background-color: darken($blue, 4%);
+    background-color: darken($pc-yellow, 4%);
   } // end hover
 
   &:active {
-    background-color: darken($blue, 5%);
+    background-color: darken($pc-yellow, 4%);
   } // end active
 
 } // end blue button
