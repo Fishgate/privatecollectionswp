@@ -80,40 +80,40 @@
                                                         
                                                                 <div id="gallery-thumbs" class="m-all t-all d-all cf">
                                                                     <div id="thumbs-container">
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
                                                                         
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
                                                                         
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
                                                                         
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
                                                                         
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
                                                                         
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
                                                                         
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
-                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                        <div class="d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
                                                                     </div>
                                                                 </div>
                                                     
@@ -125,11 +125,12 @@
                                                         <div class="img-overlay-panel" data-prod-code="awesomeproduct001">
                                                             <div id="slider" class="flexslider">
                                                                 <ul class="slides">
-                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_cheesecake_brownie.jpg" /></li>
-                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_lemon.jpg" /></li>
-                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_donut.jpg" /></li>
-                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_caramel.jpg" /></li>
-                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_cheesecake_brownie.jpg" /></li>
+                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/C15287A.jpg" /></li>
+                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/C15287B.jpg" /></li>
+                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/C15287C_b.png" /></li>
+                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/C15287C_t.png" /></li>
+                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/C15287_b.png" /></li>
+                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/C15287_t.png" /></li>
                                                                 </ul>
                                                             </div>
                                                             
@@ -140,11 +141,12 @@
 
                                                         <div id="carousel" class="flexslider">
                                                             <ul class="slides carousel">
-                                                                <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_cheesecake_brownie.jpg" /></li>
-                                                                <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_lemon.jpg" /></li>
-                                                                <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_donut.jpg" /></li>
-                                                                <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_caramel.jpg" /></li>
-                                                                <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_cheesecake_brownie.jpg" /></li>
+                                                                <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/C15287A.jpg" /></li>
+                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/C15287B.jpg" /></li>
+                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/C15287C_b.png" /></li>
+                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/C15287C_t.png" /></li>
+                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/C15287_b.png" /></li>
+                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/C15287_t.png" /></li>
                                                             </ul>
                                                         </div>
 
