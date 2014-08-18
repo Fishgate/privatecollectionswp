@@ -41,7 +41,37 @@ add_shortcode('contact-form', 'pc_contact_form');
  * 
  */
 function pc_contact_details($atts, $content) {
-    return "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eros sapien, feugiat et nibh eget, porta pellentesque erat. Ut vel mauris turpis. Quisque semper commodo nibh commodo sodales. Aenean tempus pharetra enim, quis molestie lacus laoreet in. In mattis velit orci. Suspendisse erat justo, lacinia gravida lectus nec, adipiscing gravida leo. Maecenas varius metus vel tellus condimentum congue.";
+    ob_start();
+    ?>
+
+    <div class="m-1of2 t-1of2 d-1of2 contact-details-block">
+        <h3>Cape Town</h3>
+        Tel: +27 (0)21 421 0298<br />
+        Fax: +27 (0)21 421 0269<br />
+        22 Hudsen Street<br />
+        cnr Waterkant<br />
+        Green Point<br />
+        8001<br />
+        South Africa
+    </div>
+
+    <div class="m-1of2 t-1of2 d-1of2 last contact-details-block">
+        <h3>Johannesburg</h3>
+        Tel: +27 (0)11 447 9356<br />
+        1 Corlett Drive<br />
+        Corner Oxford Road<br />
+        Illovo<br />
+        2196<br />
+        South Africa
+    </div>
+
+    <div style="margin: 0 0 1.5em;" class="clearfix"></div>
+
+    <?php    
+    $output = ob_get_contents();
+    ob_end_clean();
+    
+    return $output;
 }
 add_shortcode('contact-details', 'pc_contact_details');
 

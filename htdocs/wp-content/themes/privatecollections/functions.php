@@ -208,5 +208,24 @@ function bones_fonts() {
 
 add_action('wp_print_styles', 'bones_fonts');
 
+/*
+* Shortcode Empty Paragraph Fix
+* http://www.johannheyne.de/wordpress/shortcode-empty-paragraph-fix/
+*/
+
+function shortcode_empty_paragraph_fix( $content ) {
+
+    $array = array (
+        '<p>[' => '[',
+        ']</p>' => ']',
+        ']<br />' => ']'
+    );
+
+    $content = strtr( $content, $array );
+
+    return $content;
+}
+
+add_filter( 'the_content', 'shortcode_empty_paragraph_fix' );
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
