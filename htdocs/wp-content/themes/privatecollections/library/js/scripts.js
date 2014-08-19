@@ -176,11 +176,15 @@ jQuery(document).ready(function($) {
   // overlay toggle ============================================
   $('.slider .img-overlay-panel').bind({
       mouseenter: function(){
-          // first center the text verticaly before displaying the overly
-          overlay_height = $('#gallery-images .slider .img-overlay-panel .overlay').height();
-          $('#gallery-images .slider .img-overlay-panel .overlay p').css({ 'margin-top': (overlay_height/2)-10 });
+          viewport = updateViewportDimensions();
           
-          $(this).find('.overlay').stop().fadeIn();
+          if( viewport.width >= 1030 ) {
+            // first center the text verticaly before displaying the overly
+            overlay_height = $('#gallery-images .slider .img-overlay-panel .overlay').height();
+            $('#gallery-images .slider .img-overlay-panel .overlay p').css({ 'margin-top': (overlay_height/2)-10 });
+
+            $(this).find('.overlay').stop().fadeIn();
+          }
       },
       mouseleave: function(){
           $(this).find('.overlay').stop().fadeOut();          

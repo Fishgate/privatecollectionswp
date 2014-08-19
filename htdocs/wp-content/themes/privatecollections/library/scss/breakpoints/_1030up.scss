@@ -18,32 +18,36 @@ LAYOUT & GRID STYLES
 }
 
 
-/*********************
-HEADER STYLES
-*********************/
-
-.header-bg {
-    padding: 10px 20px;
-}
-
 #gallery-thumbs {
-    position:relative;
+    position: relative;
     height: 590px;
     overflow: hidden;
 }
 
+/*********************
+HEADER STYLES
+*********************/
 
-/*
-
-.d-pc-logo {
-    width: 77%;
-    margin: 0 auto;
+header {
+    nav {
+        margin: 2% 0 0 0;
+    }
 }
-*/
 
-.d-pc-logo {
-    width: 45.815899%;
-    float: left;
+/*********************
+HOMEPAGE FEATURES
+*********************/
+
+#album-features-thumbs {
+
+        .img-overlay-panel {
+            .overlay{
+                p {
+                    margin-top: 33%;
+                }
+            }
+        }
+
 }
 
 /*********************
@@ -58,14 +62,6 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 
-
-header {
-    nav {
-        float: right;
-        width: 54.184101%;
-        margin: 2% 0 0 0;
-    }
-}
 
 
 .nav {
@@ -175,8 +171,13 @@ GALLERY STYLES
     }
 }
 
+.d-img {
+    display: block;
+}
 
 #gallery-images {
+     margin-top: 0;
+
     .img-overlay-panel {
         .overlay{    
             cursor: pointer;

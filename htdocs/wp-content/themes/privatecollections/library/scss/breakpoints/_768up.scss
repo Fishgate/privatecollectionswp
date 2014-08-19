@@ -28,16 +28,63 @@ LAYOUT & GRID STYLES
 }
 
 /*********************
+HOMEPAGE FEATURES
+*********************/
+
+
+#album-features-thumbs {
+
+        .img-overlay-panel {
+            .overlay{
+                p {
+                    margin-top: 45%;
+                }
+            }
+        }
+
+}
+
+/*********************
+GALLERY STYLES
+*********************/
+
+
+#gallery-images {
+    margin-top: 40px;
+
+    #carousel {
+        margin-top: 40px;
+    }
+}
+
+/*********************
 HEADER STYLES
 *********************/
 
-.header {}
+header {
+    nav {
+        float: right;
+        width: 54.184101%;
+        margin: 3% 0 0 0;
+    }
+}
 
-	#logo {}
+.header-bg {
+    padding: 10px 20px;
+}
+
+.t-pc-logo {
+    width: 45.815899%;
+    float: left;
+}
 
 /*********************
 NAVIGATION STYLES
 *********************/
+
+
+
+
 
 .nav {
 	border: 0;
@@ -45,6 +92,7 @@ NAVIGATION STYLES
 		background: black(0.7);
 		margin-top: 0;
 	}
+
 	li {
 		float: left;
 		position: relative;
@@ -136,6 +184,16 @@ NAVIGATION STYLES
 		a {}
 	}  /* end current highlighters */
 
+        li.enquire {
+            a {
+                
+                &:before {
+                    right: 0px;
+                    top: 7px;
+                }
+            }
+        }
+        
 } /* end .nav */
 
 /*********************

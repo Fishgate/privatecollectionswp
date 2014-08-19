@@ -1,7 +1,4 @@
 /******************************************************************
-Site Name:
-Author:
-
 Stylesheet: Grid Stylesheet
 
 I've seperated the grid so you can swap it out easily. It's
@@ -86,7 +83,46 @@ them however you see fit.
 
 /* Portrait tablet to landscape */
 @media (min-width: 768px) and (max-width: 1029px) {
+    // custom grid, for specific page templates like the home page
+    .t-gall-thumb-1-of-5 {
+        width: 18.3397856%;
+        float: left;
+        margin: 0 2.075268% 2.075268% 0;
 
+        &:nth-child(5n) {
+            margin-right: 0;
+        }
+    }
+
+    .t-main {
+        width: 100%;
+        padding: 40px 0 0 0;
+    }
+
+    .t-main-header {
+        width: 100%;
+    }
+
+    .t-img {
+        /*width: 55.852842%;
+        float: right;
+        padding: 40px 0 0 0;*/
+    }
+
+    .feature-t-1of2 {
+        width: 48%;
+        float: left;
+        margin: 25px 4% 25px 0;
+    }
+
+    .album-t-1of5 {
+        width: 18.4%;
+        float: left;
+        margin: 0 2% 0 0;
+    }
+    
+
+    //generic grid, for every day use in shortcodes and the likes thereof
   .t-all {
     @include grid-col;
     width: 100%;
@@ -95,7 +131,8 @@ them however you see fit.
 
   .t-1of2 {
     @include grid-col;
-    width: 50%;
+    width: 48.5%;
+    margin: 0 3% 0 0;
   }
 
   .t-1of3 {
@@ -153,6 +190,11 @@ them however you see fit.
         }
     }
 
+    .d-main-header {
+        width: 41.471571%;
+        float: right;
+    }
+
     .d-main {
         width: 41.471571%;
         margin-left: 2.675585%;
@@ -160,9 +202,16 @@ them however you see fit.
         padding: 40px 0 0 0;
     }
 
-    .d-img {
+    .d-main-gallery {
+        width: 41.471571%;
+        margin-left: 2.675585%;
+        float: left;
+        padding: 40px 0 0 0;
+    }
+
+    .d-img-gallery {
         width: 55.852842%;
-        float: right;
+        float: left;
         padding: 40px 0 0 0;
     }
 
