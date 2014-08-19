@@ -25,7 +25,6 @@ over your project's layout.
 @mixin grid-col {
   float: left;
   //padding-right: 0.75em;
-
 }
 
 // the last column
@@ -46,37 +45,78 @@ There are four types, but you can add or customize
 them however you see fit.
 */
 @media (max-width: 767px) {
+    // custom grid, for specific page templates like the home page
+    .m-gall-thumb-1-of-5 {
+        width: 18.3397856%;
+        float: left;
+        margin: 0 2.075268% 2.075268% 0;
 
-  .m-all {
-    @include grid-col;
-    width: 100%;
-    padding-right: 0;
-  }
+        &:nth-child(5n) {
+            margin-right: 0;
+        }
+    }
 
-  .m-1of2 {
-    @include grid-col;
-    width: 50%;
-  }
+    .m-main {
+        width: 100%;
+        padding: 40px 0 0 0;
+    }
 
-  .m-1of3 {
-    @include grid-col;
-    width: 33.33%;
-  }
+    .m-main-header {
+        width: 100%;
+    }
 
-  .m-2of3 {
-    @include grid-col;
-    width: 66.66%;
-  }
+    .m-img {
+        /*width: 55.852842%;
+        float: right;
+        padding: 40px 0 0 0;*/
+    }
 
-  .m-1of4 {
-    @include grid-col;
-    width: 25%;
-  }
+    .feature-m-1of1 {
+        width: 100%;
+        margin: 25px 4% 25px 0;
+    }
 
-  .m-3of4 {
-    @include grid-col;
-    width: 75%;
-  }
+    .album-m-1of2 {
+        width: 49%;
+        float: left;
+        margin: 0 2% 2% 0;
+
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+    }
+
+    //generic grid, for every day use in shortcodes and the likes thereof
+    .m-all {
+      @include grid-col;
+      width: 100%;
+      padding-right: 0;
+    }
+
+    .m-1of2 {
+      @include grid-col;
+      width: 50%;
+    }
+
+    .m-1of3 {
+      @include grid-col;
+      width: 33.33%;
+    }
+
+    .m-2of3 {
+      @include grid-col;
+      width: 66.66%;
+    }
+
+    .m-1of4 {
+      @include grid-col;
+      width: 25%;
+    }
+
+    .m-3of4 {
+      @include grid-col;
+      width: 75%;
+    }
 
 } // end mobile styles
 
@@ -119,6 +159,10 @@ them however you see fit.
         width: 18.4%;
         float: left;
         margin: 0 2% 0 0;
+
+        &:nth-child(5n) {
+            margin-right: 0;
+        }
     }
     
 
@@ -225,6 +269,10 @@ them however you see fit.
         width: 18.4%;
         float: left;
         margin: 0 2% 0 0;
+
+        &:nth-child(5n) {
+            margin-right: 0;
+        }
     }
     
     //generic grid, for every day use in shortcodes and the likes thereof
