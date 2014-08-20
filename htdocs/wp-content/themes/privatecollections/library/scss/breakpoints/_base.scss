@@ -344,6 +344,7 @@ and more scalable.
 
 	}  /* end current highlighters */
 
+
         li.enquire {
             a {
 
@@ -358,7 +359,10 @@ and more scalable.
 
                     width: 12px;
                     height: 12px;
-                    position: absolute;                                        
+                    position: absolute;         
+
+                    right: 0px;
+                    top: 7px;
                 }
             }
         }

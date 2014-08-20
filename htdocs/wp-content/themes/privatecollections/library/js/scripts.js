@@ -124,23 +124,28 @@ jQuery(document).ready(function($) {
    *          Supersized full screen background slideshow    
    * 
    =============================================================*/
-  viewport = updateViewportDimensions();
-  
-  var bg_slideshow_data = $.parseJSON(site_data.bg_slideshow);
-  
-  //if (viewport.width >= 768) {
-  if (viewport.width >= 1030) {
-    $.supersized({
-        slide_interval : 10000,     // Length between transitions
-        transition : 1,             // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-        transition_speed : 1000,    // Speed of transition
-        slides : bg_slideshow_data
-    });
-  }else{
-      bgimage = "url("+ bg_slideshow_data[4].image + ")";
-      
-      $('body').css("background-image", bgimage);
-  }
+   function supersize_me(bg_slideshow_data) {
+       $.supersized({
+            slide_interval : 5000,     // Length between transitions
+            transition : 1,             // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+            transition_speed : 1000,    // Speed of transition
+            slides : bg_slideshow_data  
+       });
+   }
+   
+   function supersize_responsive_pause() {
+       viewport = updateViewportDimensions();
+           
+       if (viewport.width >= 1030) {
+           if(vars.is_paused){ api.playToggle(); }
+       }
+       else {
+           if(!vars.is_paused){ api.playToggle(); }
+       }
+   }
+    
+  supersize_me($.parseJSON(site_data.bg_slideshow));
+  supersize_responsive_pause();
   
   /*=============================================================
    * 
@@ -361,19 +366,13 @@ jQuery(document).ready(function($) {
    * 
    =============================================================*/
   $(window).resize(function() {
-      viewport = updateViewportDimensions();
+      //viewport = updateViewportDimensions();
       
       if($('#content-measure').length > 0){
           fullheight_bg();
       }
       
-      /*
-      if (viewport.width < 1030) {
-          
-      } else {         
-          
-      }
-      */
+       supersize_responsive_pause();
      
   });
 
