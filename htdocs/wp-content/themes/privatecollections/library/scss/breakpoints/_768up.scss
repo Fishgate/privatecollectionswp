@@ -50,10 +50,8 @@ GALLERY STYLES
 
 
 #gallery-images {
-    margin-top: 40px;
-
     #carousel {
-        margin-top: 40px;
+        //display: block;        
     }
 }
 
@@ -69,8 +67,10 @@ header {
     }
 }
 
-.header-bg {
-    padding: 10px 20px;
+.header-bg {    
+    .mobile-menu-dropdown {
+        display: none;
+    }
 }
 
 .t-pc-logo {
@@ -88,6 +88,10 @@ NAVIGATION STYLES
 
 .nav {
 	border: 0;
+        overflow: visible;
+        height: auto;
+        display: block;
+
 	ul {
 		background: black(0.7);
 		margin-top: 0;

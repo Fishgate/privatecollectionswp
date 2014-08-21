@@ -29,19 +29,19 @@ function pc_contact_form() {
         <textarea class="d-all t-all m-all">Message:</textarea>
         
         <div class="cart-container cf">
-            <div><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
+            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
+            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
+            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
+            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
+            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
+            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
             
-            <div><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
+            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
+            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
+            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
+            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
+            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
+            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
         </div>
         
         <input class="submit-btn" type="submit" value="Submit" />

@@ -44,12 +44,16 @@
 
 				<div id="inner-header" class="wrap cf">
                                     
-                                        <div class="header-bg t-main-header d-main-header cf">
+                                        <div class="header-bg m-main-header t-main-header d-main-header cf">
                                                 <div class="t-pc-logo d-pc-logo">
                                                     <a href="<?php echo home_url(); ?>" rel="nofollow"><img class="flex" src="<?php echo get_template_directory_uri() ?>/library/images/private-collections-logo.png" alt="<?php bloginfo('name'); ?>" /></a>
                                                 </div>
                                             
+                                                <i class="mobile-menu-dropdown fa fa-bars"></i>
+                                            
                                                 <nav role="navigation">
+                                                        
+                                                    
                                                         <?php wp_nav_menu(array(
                                                         'container' => false,                           // remove nav container
                                                         'container_class' => 'menu cf',                 // class of container (should you choose to use it)

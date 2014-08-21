@@ -28,6 +28,10 @@ body {
     display: none;
 }
 
+.visible {
+    display: block;
+}
+
 .invisible {
     visibility: hidden;
 }
@@ -169,6 +173,51 @@ img.flex {
     }
 }
 
+
+/*********************
+HOMEPAGE FEATURES
+*********************/
+
+
+#album-features-thumbs {
+
+        .img-overlay-panel {
+            .overlay{
+                p {
+                    margin-top: 50%;
+                }
+            }
+        }
+
+}
+
+/*********************
+GALLERY STYLES
+*********************/
+
+#gallery-images {
+    margin-top: 40px;
+
+    .img-overlay-panel {
+        .overlay{
+            display: none;
+        }
+    }
+
+    #carousel {
+        margin-top: 40px;
+        //display: none;
+    }
+}
+
+#gallery-thumbs {
+    #thumbs-container {
+        div.current {
+            border: solid #d0ac2e 1px;
+        }
+    }
+}
+
 /*********************
 LINK STYLES
 *********************/
@@ -261,7 +310,21 @@ HEADER STYLES
 
 .header-bg {    
     background: black(0.7);
+    padding: 10px 20px;
+
+    .mobile-menu-dropdown {
+        display: block;
+        float: right;
+        padding: 0 20px 0 0;
+        font-size: 21px;
+        cursor: pointer;
+    }
 }
+
+.m-pc-logo {
+    width: 100%;
+}
+
 
 /*********************
 NAVIGATION STYLES
@@ -278,6 +341,10 @@ and more scalable.
 .nav {
 	border-bottom: 0;
 	margin: 0;
+        /*overflow: hidden;
+        height: 0;*/
+
+        display: none;
 
 	li {
 
@@ -629,19 +696,6 @@ POSTS & CONTENT STYLES
 
         form#pc-contact-form {
             padding: 0 0 50px 0;
-
-            .cart-container {
-                
-                div {
-                    float: left;
-                    width: 13.937282%;
-                    margin-right: 3.2752616%;
-
-                    &:nth-child(6n) {
-                        margin-right: 0;
-                    }
-                }
-            }
         }
 }
 

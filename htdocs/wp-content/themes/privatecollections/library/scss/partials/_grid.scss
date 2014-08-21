@@ -46,12 +46,22 @@ them however you see fit.
 */
 @media (max-width: 767px) {
     // custom grid, for specific page templates like the home page
-    .m-gall-thumb-1-of-5 {
-        width: 18.3397856%;
+    .m-session-1of3 {
+        float: left;
+        width: 31.1498256%;
+        margin: 0 3.2752616% 0 0;
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }
+
+    .m-gall-thumb-1-of-2 {
+        width: 48.962366%;
         float: left;
         margin: 0 2.075268% 2.075268% 0;
 
-        &:nth-child(5n) {
+        &:nth-child(2n) {
             margin-right: 0;
         }
     }
@@ -85,6 +95,8 @@ them however you see fit.
             margin-right: 0;
         }
     }
+
+
 
     //generic grid, for every day use in shortcodes and the likes thereof
     .m-all {
@@ -124,6 +136,16 @@ them however you see fit.
 /* Portrait tablet to landscape */
 @media (min-width: 768px) and (max-width: 1029px) {
     // custom grid, for specific page templates like the home page
+    .t-session-1of6 {
+        float: left;
+        width: 13.937282%;
+        margin-right: 3.2752616%;
+
+        &:nth-child(6n) {
+            margin-right: 0;
+        }
+    }
+
     .t-gall-thumb-1-of-5 {
         width: 18.3397856%;
         float: left;
@@ -167,63 +189,73 @@ them however you see fit.
     
 
     //generic grid, for every day use in shortcodes and the likes thereof
-  .t-all {
-    @include grid-col;
-    width: 100%;
-    padding-right: 0;
-  }
+    .t-all {
+      @include grid-col;
+      width: 100%;
+      padding-right: 0;
+    }
 
-  .t-1of2 {
-    @include grid-col;
-    width: 48.5%;
-    margin: 0 3% 0 0;
-  }
+    .t-1of2 {
+      @include grid-col;
+      width: 48.5%;
+      margin: 0 3% 0 0;
+    }
 
-  .t-1of3 {
-    @include grid-col;
-    width: 33.33%;
-  }
+    .t-1of3 {
+      @include grid-col;
+      width: 33.33%;
+    }
 
-  .t-2of3 {
-    @include grid-col;
-    width: 66.66%;
-  }
+    .t-2of3 {
+      @include grid-col;
+      width: 66.66%;
+    }
 
-  .t-1of4 {
-    @include grid-col;
-    width: 25%;
-  }
+    .t-1of4 {
+      @include grid-col;
+      width: 25%;
+    }
 
-  .t-3of4 {
-    @include grid-col;
-    width: 75%;
-  }
+    .t-3of4 {
+      @include grid-col;
+      width: 75%;
+    }
 
-  .t-1of5 {
-    @include grid-col;
-    width: 20%;
-  }
+    .t-1of5 {
+      @include grid-col;
+      width: 20%;
+    }
 
-  .t-2of5 {
-    @include grid-col;
-    width: 40%;
-  }
+    .t-2of5 {
+      @include grid-col;
+      width: 40%;
+    }
 
-  .t-3of5 {
-    @include grid-col;
-    width: 60%;
-  }
+    .t-3of5 {
+      @include grid-col;
+      width: 60%;
+    }
 
-  .t-4of5 {
-    @include grid-col;
-    width: 80%;
-  }
+    .t-4of5 {
+      @include grid-col;
+      width: 80%;
+    }
 
 } // end tablet
 
 /* Landscape to small desktop */
 @media (min-width: 1030px) {
     // custom grid, for specific page templates like the home page
+    .d-session-1of6 {
+        float: left;
+        width: 13.937282%;
+        margin-right: 3.2752616%;
+
+        &:nth-child(6n) {
+            margin-right: 0;
+        }
+    }
+
     .d-gall-thumb-1-of-4 {
         width: 23.387096%;
         float: left;

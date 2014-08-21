@@ -4,7 +4,7 @@
 
 				<div id="inner-content" class="wrap cf">
 
-						<div id="main" class="m-all t-main d-main cf" role="main">
+						<div id="main" class="m-main t-main d-main cf" role="main">
                                                     <div id="content-measure" class="cf">
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

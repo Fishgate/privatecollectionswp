@@ -176,6 +176,22 @@ jQuery(document).ready(function($) {
       sync: "#carousel"
   });
   
+  /*=============================================================
+   * 
+   *                    Mobile menu behaviour
+   * 
+   =============================================================*/
+   $('.header-bg .mobile-menu-dropdown').click(function(){
+        $('.nav').toggle();
+   });
+  
+  function nav_remove_style() {
+       viewport = updateViewportDimensions();
+       
+       if( viewport.width >= 768 ) {
+           $('#menu-main-menu').removeAttr('style');
+       }
+  }
   
   /*=============================================================
    * 
@@ -189,23 +205,30 @@ jQuery(document).ready(function($) {
           viewport = updateViewportDimensions();
           
           if( viewport.width >= 1030 ) {
-            // first center the text verticaly before displaying the overly
-            overlay_height = $('#gallery-images .slider .img-overlay-panel .overlay').height();
-            $('#gallery-images .slider .img-overlay-panel .overlay p').css({ 'margin-top': (overlay_height/2)-10 });
+              // first center the text verticaly before displaying the overly
+              overlay_height = $('#gallery-images .slider .img-overlay-panel .overlay').height();
+              $('#gallery-images .slider .img-overlay-panel .overlay p').css({ 'margin-top': (overlay_height/2)-10 });
 
-            $(this).find('.overlay').stop().fadeIn();
+              $(this).find('.overlay').stop().fadeIn();
           }
       },
       mouseleave: function(){
-          $(this).find('.overlay').stop().fadeOut();          
+          viewport = updateViewportDimensions();
+  
+          if( viewport.width >= 1030 ) {
+            $(this).find('.overlay').stop().fadeOut();       
+          }
       }
   });
   
   // overlay click ==============================================
   $('.img-overlay-panel .overlay').click(function(){
-      current_prod = $(this).parent().data('prod-code');
-      
-      console.log(current_prod); //use this to set the session to be used on contact form
+      viewport = updateViewportDimensions();
+  
+      if( viewport.width >= 1030 ) {
+        current_prod = $(this).parent().data('prod-code');
+        console.log(current_prod); //use this to set the session to be used on contact form
+      }
   });
  
   /*=============================================================
@@ -372,8 +395,8 @@ jQuery(document).ready(function($) {
           fullheight_bg();
       }
       
-       supersize_responsive_pause();
-     
+      supersize_responsive_pause();
+      nav_remove_style();
   });
 
 }); /* end of as page load scripts */
