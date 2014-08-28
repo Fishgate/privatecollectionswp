@@ -15,10 +15,13 @@ require_once( 'library/bones.php' );
 require_once( 'library/custom-post-type.php' );
 
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
-// require_once( 'library/admin.php' );
+require_once( 'library/admin.php' );
 
 // LOAD SHORTCODES
 require_once('library/shortcodes.php');
+
+// LOAD CUSTOM META FOR POSTS
+require_once('library/pc-gallery-meta.php');
 
 /*********************
 LAUNCH BONES
@@ -214,7 +217,6 @@ add_action('wp_print_styles', 'bones_fonts');
 */
 
 function shortcode_empty_paragraph_fix( $content ) {
-
     $array = array (
         '<p>[' => '[',
         ']</p>' => ']',
@@ -222,10 +224,40 @@ function shortcode_empty_paragraph_fix( $content ) {
     );
 
     $content = strtr( $content, $array );
-
+    
     return $content;
 }
 
 add_filter( 'the_content', 'shortcode_empty_paragraph_fix' );
+
+
+/**
+ * Remove "Discussions" and "Comments" meta boxes, we are not going to make use of comments.
+ * http://codex.wordpress.org/Function_Reference/remove_meta_box
+ * 
+ */
+
+function remove_meta_boxes() {
+    remove_meta_box('commentstatusdiv', 'post', 'normal');
+    remove_meta_box('commentsdiv', 'post', 'normal');
+}
+add_action('admin_menu', 'remove_meta_boxes');
+
+/**
+ * Remove all the nextgen stuff we aren't going to use
+ * 
+ */
+function remove_nextgen_post_thumbnail() {
+    remove_all_filters( 'admin_post_thumbnail_html' );
+}
+add_action('do_meta_boxes', 'remove_nextgen_post_thumbnail');
+
+
+function remove_nextgen_attach_gallery_to_post() {
+    remove_all_filters('add_attach_to_post_button');
+}
+add_action('mce_buttons', 'remove_nextgen_attach_gallery_to_post');
+
+
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

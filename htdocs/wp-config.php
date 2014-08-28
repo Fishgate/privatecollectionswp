@@ -39,6 +39,8 @@ if(file_exists( dirname( __FILE__ ) . '/wp-config-local.php' )){
 	 * in their development environments.
 	 */
 	define('WP_DEBUG', false);
+        error_reporting(0);
+        @ini_set('display_errors', 0);
 }
 
 /** Database Charset to use in creating database tables. */

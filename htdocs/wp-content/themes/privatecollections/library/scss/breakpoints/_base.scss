@@ -105,7 +105,7 @@ LAYOUT & GRID STYLES
     // up to 4k resolution
     width: 3840px; 
     height: 2160px; 
-    background: black(0.3);
+    background: black(0.6);
 }
 
 /* Setup styles for creating semi transparent overlays on images (used a few times in this site) */
@@ -452,13 +452,11 @@ POSTS & CONTENT STYLES
 			//margin-bottom: 25px;
 
 			header {
-				border-bottom: 1px solid $light-gray;
 				padding: 1.5em;
 			}
 
 			footer {
 				padding: 1.5em;
-				border-top: 1px solid $light-gray;
 
 				p {
 					margin: 0;
@@ -496,7 +494,8 @@ POSTS & CONTENT STYLES
 			color: $meta-gray;
 			font-style: italic;
 			margin: 0;
-
+                        font-size: 11px;
+                        
 			time {}
 		}
 
@@ -842,7 +841,7 @@ COMMENT STYLES
 #comments-title {
 	padding: 0.75em;
 	margin: 0;
-	border-top: 1px solid $light-gray;
+	order-top: 1px solid $light-gray;
 
 	/* number of comments span */
 	span {}
@@ -960,10 +959,10 @@ COMMENT STYLES
 	/* general comment classes */
 	&.alt {}
 	&.odd {
-		background-color: $white;
+		//background-color: $white;
 	}
 	&.even {
-		background: $light-gray;
+		//background: $light-gray;
 	}
 	&.parent {}
 	&.comment {}

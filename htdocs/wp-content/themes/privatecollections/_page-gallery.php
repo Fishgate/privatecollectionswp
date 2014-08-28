@@ -1,9 +1,3 @@
-<?php
-/*
- Template Name: Gallery
-*/
-?>
-
 <?php get_header(); ?>
 
 			<div id="content">
@@ -12,15 +6,33 @@
                                                 
                                                 <div id="gallery-images" class="d-img-gallery">
                                                     <section class="slider">
+                                                        <?php
+                                                        
+                                                        $gallery = array();
+                                                        
+                                                        global $nggdb;
+                                                        $nextg = new $nggdb;
+                                                        
+                                                        $gallery_images = $nextg->get_gallery(2);
+                                                        
+                                                        foreach($gallery_images as $image) {                                                            
+                                                            $thumburl = content_url('gallery/' . $image->slug . $image->thumbFolder . $image->meta_data['thumbnail']['filename']);
+                                                            
+                                                            array_push( $gallery, array($image->imageURL, $thumburl) );
+                                                        }
+                                                        
+                                                        ?>
                                                         
                                                         <div class="img-overlay-panel" data-prod-code="awesomeproduct001">
                                                             <div id="slider" class="flexslider">
                                                                 <ul class="slides">
-                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_lemon.jpg" /></li>
-                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_donut.jpg" /></li>
-                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_cheesecake_brownie.jpg" /></li>
-                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_caramel.jpg" /></li>
-                                                                    <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_lemon.jpg" /></li>
+                                                                    <?php
+                                                                    
+                                                                    foreach($gallery as $images) {                                                                        
+                                                                        echo '<li><img src="'. $images[0] .'" /></li>';
+                                                                    }
+                                                                    
+                                                                    ?>
                                                                 </ul>
                                                             </div>
                                                             
@@ -31,11 +43,13 @@
 
                                                         <div id="carousel" class="flexslider">
                                                             <ul class="slides carousel">
-                                                                <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_lemon.jpg" /></li>
-                                                                <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_donut.jpg" /></li>
-                                                                <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_cheesecake_brownie.jpg" /></li>
-                                                                <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_caramel.jpg" /></li>
-                                                                <li><img src="<?php echo get_template_directory_uri() ?>/library/images/temp/kitchen_adventurer_lemon.jpg" /></li>
+                                                                <?php
+
+                                                                foreach($gallery as $thumbs) {                                                                        
+                                                                    echo '<li><img src="'. $thumbs[1] .'" /></li>';
+                                                                }
+
+                                                                ?>
                                                             </ul>
                                                         </div>
 
