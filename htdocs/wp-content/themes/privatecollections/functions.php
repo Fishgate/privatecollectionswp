@@ -21,7 +21,10 @@ require_once( 'library/admin.php' );
 require_once('library/shortcodes.php');
 
 // LOAD CUSTOM META FOR POSTS
-require_once('library/pc-gallery-meta.php');
+require_once('library/_pc-gallery-meta.php');
+
+// LOAD RENDER GALLERY FUNCTION
+require_once('library/_pc-render-gallery.php');
 
 /*********************
 LAUNCH BONES
@@ -76,8 +79,8 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'bones-thumb-600', 600, 150, true );
-add_image_size( 'bones-thumb-300', 300, 100, true );
+add_image_size( 'pc-home-feature', 720, 488, true );
+add_image_size( 'pc-gallery-thumb', 351, 351, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -99,14 +102,15 @@ You can change the names and dimensions to whatever
 you like. Enjoy!
 */
 
+/*
 add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'bones-thumb-600' => __('600px by 150px'),
-        'bones-thumb-300' => __('300px by 100px'),
     ) );
 }
+*/
 
 /*
 The function above adds the ability to use the dropdown menu to select
@@ -211,9 +215,10 @@ function bones_fonts() {
 
 add_action('wp_print_styles', 'bones_fonts');
 
-/*
+/**
 * Shortcode Empty Paragraph Fix
 * http://www.johannheyne.de/wordpress/shortcode-empty-paragraph-fix/
+* 
 */
 
 function shortcode_empty_paragraph_fix( $content ) {
@@ -239,7 +244,9 @@ add_filter( 'the_content', 'shortcode_empty_paragraph_fix' );
 
 function remove_meta_boxes() {
     remove_meta_box('commentstatusdiv', 'post', 'normal');
+    remove_meta_box('commentstatusdiv', 'page', 'normal');
     remove_meta_box('commentsdiv', 'post', 'normal');
+    remove_meta_box('commentsdiv', 'page', 'normal');
 }
 add_action('admin_menu', 'remove_meta_boxes');
 
@@ -259,5 +266,17 @@ function remove_nextgen_attach_gallery_to_post() {
 add_action('mce_buttons', 'remove_nextgen_attach_gallery_to_post');
 
 
+/*
+ * Remove nextgen stuff from the menu bar
+ *
+ */
+
+function remove_admin_bar_links() {
+    global $wp_admin_bar;
+    
+    $wp_admin_bar->remove_menu('ngg-menu');         // Remove nextgen gallery menu
+    
+}
+add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

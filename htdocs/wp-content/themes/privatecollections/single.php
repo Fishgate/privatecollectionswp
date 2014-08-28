@@ -6,57 +6,7 @@
 
                                         <div id="gallery-images" class="d-img-gallery">
                                             
-                                            <section class="slider">
-                                                <?php
-
-                                                $gallery = array();
-
-                                                global $nggdb;
-                                                $nextg = new $nggdb;
-
-                                                $attached_gallery = get_post_meta( $post->ID, '_pc_attached_gallery', true );
-                                                
-                                                $gallery_images = $nextg->get_gallery($attached_gallery);
-
-                                                foreach($gallery_images as $image) {                                                            
-                                                    $thumburl = content_url('gallery/' . $image->slug . $image->thumbFolder . $image->meta_data['thumbnail']['filename']);
-
-                                                    array_push( $gallery, array($image->imageURL, $thumburl) );
-                                                }
-
-                                                ?>
-
-                                                <div class="img-overlay-panel" data-prod-code="awesomeproduct001">
-                                                    <div id="slider" class="flexslider">
-                                                        <ul class="slides">
-                                                            <?php
-
-                                                            foreach($gallery as $images) {                                                                        
-                                                                echo '<li><img src="'. $images[0] .'" /></li>';
-                                                            }
-
-                                                            ?>
-                                                        </ul>
-                                                    </div>
-
-                                                    <div class="overlay">
-                                                        <p>Pin this piece to your enquiry list.</p>
-                                                    </div>
-                                                </div>
-
-                                                <div id="carousel" class="flexslider">
-                                                    <ul class="slides carousel">
-                                                        <?php
-
-                                                        foreach($gallery as $thumbs) {                                                                        
-                                                            echo '<li><img src="'. $thumbs[1] .'" /></li>';
-                                                        }
-
-                                                        ?>
-                                                    </ul>
-                                                </div>
-
-                                            </section>
+                                        <?php pc_gallery_render($post); ?>
                                             
                                         </div><!-- close #gallery-images -->
                                     

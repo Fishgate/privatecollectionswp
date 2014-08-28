@@ -8,8 +8,6 @@
                                                     
                                                     <div id="content-measure" class="cf">
                                                         
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                                                        
                                                         <section data-state="closed" class="category-dropdown cf">
                                                             <div>
                                                                 <h2>Gallery</h2>
@@ -18,52 +16,37 @@
                                                         
 							<div id="gallery-thumbs" class="m-all t-all d-all cf">
                                                             
-                                                            <div id="thumbs-container">
-                                                                
-                                                                <div class="current m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="http://192.168.1.11/PRIVATECOLLECTIONS/website_new/htdocs/hello-world/"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                
-                                                            </div>
+                                                                <div id="thumbs-container">
+                                                        
+                                                                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+                                                                    <?php if(has_post_thumbnail()): //if it has no featured image, its not going to work in this layout ?>
+                                                                    
+                                                                        <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4">
+                                                                            <a title="<?php get_the_title(); ?>" href="<?php the_permalink(); ?>">
+                                                                                <?php
+                                                                                
+                                                                                $featured_image_id = get_post_thumbnail_id( get_the_ID() );
+                                                                                
+                                                                                $featured_image_src = wp_get_attachment_image_src( $featured_image_id, 'pc-gallery-thumb' );
+                                                                                $featured_image_src = $featured_image_src[0];
+                                                                                
+                                                                                $featured_image_alt = get_post_meta($featured_image_id, '_wp_attachment_image_alt', true);
+                                                                                
+                                                                                ?>
+                                                                                <img class="flex" src="<?php echo $featured_image_src; ?>" alt="<?php echo $featured_image_alt; ?>" />
+                                                                            </a>
+                                                                            
+                                                                        </div>
+                                                                    
+                                                                    <?php endif; ?>
+
+                                                                <?php endwhile; ?>
+
+                                                                </div>
                                                             
                                                         </div>
-
-							<?php endwhile; ?>
-
-									<?php bones_page_navi(); ?>
-
+                                                                
 							<?php else : ?>
 
 									<article id="post-not-found" class="hentry cf">
