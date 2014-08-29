@@ -4,73 +4,71 @@
 
 				<div id="inner-content" class="wrap cf">
 
-						<div id="main" class="m-all t-2of3 d-5of7 cf" role="main">
+						<div id="main" class="m-main t-main d-main cf" role="main">
+                                                    
+                                                    <div id="content-measure" class="cf">
+                                                        
+                                                        <section data-state="closed" class="category-dropdown cf">
+                                                            <div>
+                                                                <?php if (is_category()) { ?>
+                                                                        <h2>
+                                                                            <?php single_cat_title(); ?>
+                                                                        </h2>
 
-							<?php if (is_category()) { ?>
-								<h1 class="archive-title h2">
-									<span><?php _e( 'Posts Categorized:', 'bonestheme' ); ?></span> <?php single_cat_title(); ?>
-								</h1>
+                                                                <?php } elseif (is_tag()) { ?>
+                                                                        <h2>
+                                                                            <?php single_tag_title(); ?>
+                                                                        </h2>
 
-							<?php } elseif (is_tag()) { ?>
-								<h1 class="archive-title h2">
-									<span><?php _e( 'Posts Tagged:', 'bonestheme' ); ?></span> <?php single_tag_title(); ?>
-								</h1>
+                                                                <?php } elseif (is_author()) {
+                                                                        global $post;
+                                                                        $author_id = $post->post_author;
+                                                                ?>
+                                                                        <h2>
+                                                                            <span><?php _e( 'Posts By:', 'bonestheme' ); ?></span> <?php the_author_meta('display_name', $author_id); ?>
+                                                                        </h2>
+                                                                <?php } elseif (is_day()) { ?>
+                                                                        <h2>
+                                                                            <span><?php _e( 'Daily Archives:', 'bonestheme' ); ?></span> <?php the_time('l, F j, Y'); ?>
+                                                                        </h2>
 
-							<?php } elseif (is_author()) {
-								global $post;
-								$author_id = $post->post_author;
-							?>
-								<h1 class="archive-title h2">
+                                                                <?php } elseif (is_month()) { ?>
+                                                                        <h2>
+                                                                            <span><?php _e( 'Monthly Archives:', 'bonestheme' ); ?></span> <?php the_time('F Y'); ?>
+                                                                        </h2>
 
-									<span><?php _e( 'Posts By:', 'bonestheme' ); ?></span> <?php the_author_meta('display_name', $author_id); ?>
+                                                                <?php } elseif (is_year()) { ?>
+                                                                        <h2>
+                                                                            <span><?php _e( 'Yearly Archives:', 'bonestheme' ); ?></span> <?php the_time('Y'); ?>
+                                                                        </h2>
+                                                                <?php } ?>
+                                                            </div>
+                                                        </section>
+							
+                                                        <div id="gallery-thumbs" class="m-all t-all d-all cf">
+                                                            
+                                                                <div id="thumbs-container">
+                                                        
+                                                                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-								</h1>
-							<?php } elseif (is_day()) { ?>
-								<h1 class="archive-title h2">
-									<span><?php _e( 'Daily Archives:', 'bonestheme' ); ?></span> <?php the_time('l, F j, Y'); ?>
-								</h1>
+                                                                    <?php if(has_post_thumbnail()): //if it has no featured image, its not going to work in this layout ?>
+                                                                    
+                                                                        <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4">
+                                                                            <a title="<?php get_the_title(); ?>" href="<?php the_permalink(); ?>">
+                                                                                <?php $post_thumb = new post_thumbnail(); ?>
+                                                                                
+                                                                                <img class="flex" src="<?php echo $post_thumb->get_src(); ?>" alt="<?php echo $post_thumb->get_alt(); ?>" />
+                                                                            </a>
+                                                                            
+                                                                        </div>
+                                                                    
+                                                                    <?php endif; ?>
 
-							<?php } elseif (is_month()) { ?>
-									<h1 class="archive-title h2">
-										<span><?php _e( 'Monthly Archives:', 'bonestheme' ); ?></span> <?php the_time('F Y'); ?>
-									</h1>
+                                                                <?php endwhile; ?>
 
-							<?php } elseif (is_year()) { ?>
-									<h1 class="archive-title h2">
-										<span><?php _e( 'Yearly Archives:', 'bonestheme' ); ?></span> <?php the_time('Y'); ?>
-									</h1>
-							<?php } ?>
-
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
-
-								<header class="article-header">
-
-									<h3 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-									<p class="byline vcard"><?php
-										printf(__( 'Posted', 'bonestheme' ) . ' <time class="updated" datetime="%1$s" pubdate>%2$s</time> ' . __('by', 'bonestheme' ) . ' <span class="author">%3$s</span> <span class="amp">&</span> ' . __('filed under', 'bonestheme') .  ' %4$s.', get_the_time('Y-m-j'), get_the_time(__( 'F jS, Y', 'bonestheme' )), get_the_author_link( get_the_author_meta( 'ID' ) ), get_the_category_list(', '));
-									?></p>
-
-								</header>
-
-								<section class="entry-content cf">
-
-									<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
-
-									<?php the_excerpt(); ?>
-
-								</section>
-
-								<footer class="article-footer">
-
-								</footer>
-
-							</article>
-
-							<?php endwhile; ?>
-
-									<?php bones_page_navi(); ?>
+                                                                </div>
+                                                            
+                                                        </div>
 
 							<?php else : ?>
 
@@ -88,9 +86,9 @@
 
 							<?php endif; ?>
 
+                                                     </div>
+                                                    
 						</div>
-
-					<?php get_sidebar(); ?>
 
 				</div>
 
