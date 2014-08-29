@@ -24,17 +24,9 @@
                                                                     
                                                                         <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4">
                                                                             <a title="<?php get_the_title(); ?>" href="<?php the_permalink(); ?>">
-                                                                                <?php
+                                                                                <?php $post_thumb = new post_thumbnail(); ?>
                                                                                 
-                                                                                $featured_image_id = get_post_thumbnail_id( get_the_ID() );
-                                                                                
-                                                                                $featured_image_src = wp_get_attachment_image_src( $featured_image_id, 'pc-gallery-thumb' );
-                                                                                $featured_image_src = $featured_image_src[0];
-                                                                                
-                                                                                $featured_image_alt = get_post_meta($featured_image_id, '_wp_attachment_image_alt', true);
-                                                                                
-                                                                                ?>
-                                                                                <img class="flex" src="<?php echo $featured_image_src; ?>" alt="<?php echo $featured_image_alt; ?>" />
+                                                                                <img class="flex" src="<?php echo $post_thumb->get_src(); ?>" alt="<?php echo $post_thumb->get_alt(); ?>" />
                                                                             </a>
                                                                             
                                                                         </div>
@@ -50,14 +42,14 @@
 							<?php else : ?>
 
 									<article id="post-not-found" class="hentry cf">
-											<header class="article-header">
-												<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+                                                                                <header class="article-header">
+                                                                                        <h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
 										</header>
-											<section class="entry-content">
-												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+                                                                                <section class="entry-content">
+                                                                                        <p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
 										</section>
 										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the index.php template.', 'bonestheme' ); ?></p>
+                                                                                        <p><?php _e( 'This is the error message in the index.php template.', 'bonestheme' ); ?></p>
 										</footer>
 									</article>
 

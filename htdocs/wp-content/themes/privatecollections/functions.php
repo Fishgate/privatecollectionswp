@@ -215,12 +215,11 @@ function bones_fonts() {
 
 add_action('wp_print_styles', 'bones_fonts');
 
-/**
-* Shortcode Empty Paragraph Fix
-* http://www.johannheyne.de/wordpress/shortcode-empty-paragraph-fix/
-* 
-*/
-
+/*
+ * Shortcode Empty Paragraph Fix
+ * http://www.johannheyne.de/wordpress/shortcode-empty-paragraph-fix/
+ * 
+ */
 function shortcode_empty_paragraph_fix( $content ) {
     $array = array (
         '<p>[' => '[',
@@ -232,16 +231,14 @@ function shortcode_empty_paragraph_fix( $content ) {
     
     return $content;
 }
-
 add_filter( 'the_content', 'shortcode_empty_paragraph_fix' );
 
 
-/**
+/*
  * Remove "Discussions" and "Comments" meta boxes, we are not going to make use of comments.
  * http://codex.wordpress.org/Function_Reference/remove_meta_box
  * 
  */
-
 function remove_meta_boxes() {
     remove_meta_box('commentstatusdiv', 'post', 'normal');
     remove_meta_box('commentstatusdiv', 'page', 'normal');
@@ -250,27 +247,30 @@ function remove_meta_boxes() {
 }
 add_action('admin_menu', 'remove_meta_boxes');
 
-/**
- * Remove all the nextgen stuff we aren't going to use
- * 
+
+
+/*
+ *  removes "nextgen featured image" from the featured image meta box
  */
 function remove_nextgen_post_thumbnail() {
     remove_all_filters( 'admin_post_thumbnail_html' );
 }
 add_action('do_meta_boxes', 'remove_nextgen_post_thumbnail');
 
-
+/*
+ * removes "attach nextgen gallery" button from the tinymce editor.
+ * this actually causes the file module.attach_to_post.php in the plugin
+ * to give spit out a warning error. All PHP errors should be supressed
+ * on the live server.
+ */
 function remove_nextgen_attach_gallery_to_post() {
     remove_all_filters('add_attach_to_post_button');
 }
 add_action('mce_buttons', 'remove_nextgen_attach_gallery_to_post');
 
-
 /*
- * Remove nextgen stuff from the menu bar
- *
+ * remove "gallery" button from the admin login bar
  */
-
 function remove_admin_bar_links() {
     global $wp_admin_bar;
     
@@ -278,5 +278,45 @@ function remove_admin_bar_links() {
     
 }
 add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
+
+/*
+ * A quick and dirty class for retrieving post thumbnail src 
+ * and alt attribute as set in the wordpress media uploader.
+ * Must be used within the loop to properly get_the_ID();
+ * 
+ */
+class post_thumbnail {
+    public $thumbnail_size = 'pc-gallery-thumb';
+    
+    private $post_id;
+    
+    private $post_thumbnail_src;
+    
+    private $post_thumbnail_alt;
+
+    public function __construct() {
+        $this->post_id = get_the_ID();
+    }
+    
+    private function get_post_thumbnail_id() {
+        return get_post_thumbnail_id( $this->post_id );
+    }
+    
+    public function get_src() {
+        $this->post_thumbnail_src = wp_get_attachment_image_src( $this->get_post_thumbnail_id(), $this->thumbnail_size );
+        
+        return $this->post_thumbnail_src[0];
+    }
+    
+    public function get_alt() {
+        $this->post_thumbnail_alt = get_post_meta( $this->get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
+        
+        return $this->post_thumbnail_alt;
+    }
+    
+}
+
+
+
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

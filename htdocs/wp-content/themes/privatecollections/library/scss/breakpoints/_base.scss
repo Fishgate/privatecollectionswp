@@ -175,23 +175,6 @@ img.flex {
 
 
 /*********************
-HOMEPAGE FEATURES
-*********************/
-
-
-#album-features-thumbs {
-
-        .img-overlay-panel {
-            .overlay{
-                p {
-                    margin-top: 50%;
-                }
-            }
-        }
-
-}
-
-/*********************
 GALLERY STYLES
 *********************/
 
@@ -722,6 +705,25 @@ HOMEPAGE FEATURES
 #album-features-thumbs {
     
     .album-feature {
+        margin-bottom: 11px;
+
+        position: relative;
+        background: black(0.7);
+
+        p {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            font-weight: 300;            
+            width: 100%;
+            text-transform: uppercase;
+            text-align:center;
+            padding: 0 9px;
+            padding-top: 45%;
+        }      
+
         a, a:visited {
             color: $pc-grey;
 
@@ -741,17 +743,6 @@ HOMEPAGE FEATURES
                     for mobile devices.
                     */
                     -webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
-            }
-        }
-
-        .img-overlay-panel {
-            .overlay{
-                p {
-                    font-weight: 300;            
-                    width: 100%;
-                    text-transform: uppercase;
-                    
-                }
             }
         }
 

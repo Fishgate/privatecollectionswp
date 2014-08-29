@@ -73,7 +73,7 @@
 
                                                                             <div class="feature feature-m-1of1 feature-t-1of2 feature-d-1of2 last"> <?php //.last on every 2th iteration ?>
                                                                                 <div><img class="flex" src="http://placehold.it/295x200&text=hello" alt="http://placehold.it/295x200" /></div>
-                                                                                <h2>New Collection</h2>
+                                                                                <h2>Latest Piece</h2>
                                                                                 <p class="date-stamp">00-00-0000</p>
                                                                             </div>
 
@@ -81,51 +81,24 @@
 
                                                                     <div id="album-features-thumbs" class="m-all t-all d-all cf">
 
-                                                                            <div class="album-feature album-m-1of2 album-t-1of5 album-d-1of5">
-                                                                                <div class="img-overlay-panel">
-                                                                                    <img class="flex" src="http://placehold.it/95x95&text=hello" alt="http://placehold.it/95x95&text=hello " />
-                                                                                    <div class="overlay">
-                                                                                        <p>Architectural Pieces</p>
-                                                                                    </div>
+                                                                            <?php
+                                                                            
+                                                                            $categories = get_categories('exclude=1,8');
+                                                                            
+                                                                            foreach($categories as $category) {
+                                                                                ?>
+                                                                        
+                                                                                <div class="album-feature album-m-1of2 album-t-1of5 album-d-1of5">
+                                                                                    <a href="<?php echo get_category_link($category->term_id); ?>">
+                                                                                    <p><?php echo $category->name; ?></p>
+                                                                                    </a>
                                                                                 </div>
-                                                                            </div>
-
-                                                                            <div class="album-feature album-m-1of2 album-t-1of5 album-d-1of5">
-                                                                                <div class="img-overlay-panel">
-                                                                                    <img class="flex" src="http://placehold.it/95x95&text=hello " alt="http://placehold.it/95x95&text=hello " />
-                                                                                    <div class="overlay">
-                                                                                        <p>Furniture</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <div class="album-feature album-m-1of2 album-t-1of5 album-d-1of5">
-                                                                                <div class="img-overlay-panel">
-                                                                                    <img class="flex" src="http://placehold.it/95x95&text=hello " alt="http://placehold.it/95x95&text=hello " />
-                                                                                    <div class="overlay">
-                                                                                        <p>Decorative Pieces</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <div class="album-feature album-m-1of2 album-t-1of5 album-d-1of5">
-                                                                                <div class="img-overlay-panel">
-                                                                                    <img class="flex" src="http://placehold.it/95x95&text=hello " alt="http://placehold.it/95x95&text=hello " />
-                                                                                    <div class="overlay">
-                                                                                        <p>Lighting</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <div class="album-feature album-m-1of2 album-t-1of5 album-d-1of5">
-                                                                                <div class="img-overlay-panel">
-                                                                                    <img class="flex" src="http://placehold.it/95x95&text=hello " alt="http://placehold.it/95x95&text=hello " />
-                                                                                    <div class="overlay">
-                                                                                        <p>New hand made items</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-
+                                                                        
+                                                                                <?php
+                                                                            }
+                                                                            
+                                                                            ?>
+                                                                        
                                                                     </div>
                                                         </div>
 						</div>
