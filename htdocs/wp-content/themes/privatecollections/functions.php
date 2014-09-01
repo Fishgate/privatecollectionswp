@@ -23,8 +23,9 @@ require_once('library/shortcodes.php');
 // LOAD CUSTOM META FOR POSTS
 require_once('library/_pc-gallery-meta.php');
 
-// LOAD RENDER GALLERY FUNCTION
+// LOAD META BOXES
 require_once('library/_pc-render-gallery.php');
+require_once('library/_pc-code-meta.php');
 
 /*********************
 LAUNCH BONES
@@ -81,6 +82,7 @@ if ( ! isset( $content_width ) ) {
 // Thumbnail sizes
 add_image_size( 'pc-home-feature', 720, 488, true );
 add_image_size( 'pc-gallery-thumb', 351, 351, true );
+add_image_size( 'pc-enquiries-thumb', 212, 212, true );
 
 /*
 to add more sizes, simply copy a line from above

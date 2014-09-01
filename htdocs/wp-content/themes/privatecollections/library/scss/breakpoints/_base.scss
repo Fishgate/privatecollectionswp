@@ -396,12 +396,12 @@ and more scalable.
 
 
         li.enquire {
-            a {
+            a.update {
+                position: relative;
 
-            position: relative;
                 &:before {
                     background: url('../images/ui/cart-bg.png') no-repeat;
-                    content: "00";
+                    content: attr(data-content);
 
                     font-size: 8px;
                     text-align: center;
@@ -415,6 +415,7 @@ and more scalable.
                     top: 7px;
                 }
             }
+
         }
 
 } /* end .nav */

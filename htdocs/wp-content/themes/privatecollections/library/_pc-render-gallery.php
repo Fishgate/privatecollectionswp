@@ -15,8 +15,9 @@ function pc_gallery_render($post) {
         global $nggdb;
         $nextg = new $nggdb;
         
-        // get post meta of the gallery (gid) we wish to display
+        // get post meta of the gallery
         $attached_gallery = get_post_meta( $post->ID, '_pc_attached_gallery', true );
+        $product_code = get_post_meta( $post->ID, '_pc_product_code', true );
         
         // check if an attached gallery has been set from the post admin panel
         if($attached_gallery !== "0") {
@@ -31,7 +32,7 @@ function pc_gallery_render($post) {
             // begin rendering the markup for the gallery
             ?>
             <section class="slider">
-                <div class="img-overlay-panel" data-prod-code="awesomeproduct001">
+                <div class="img-overlay-panel" data-prod-code="<?php echo $product_code; ?>" data-prod-thumbnail="<?php $post_thumb = new post_thumbnail(); $post_thumb->thumbnail_size = 'pc-enquiries-thumb'; echo $post_thumb->get_src(); ?>">
                     <div id="slider" class="flexslider">
                         <ul class="slides">
                             <?php

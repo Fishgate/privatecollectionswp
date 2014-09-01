@@ -222,15 +222,90 @@ jQuery(document).ready(function($) {
       }
   });
   
+  
+  /*=============================================================
+   * 
+   *          Local storage for contact page enquiries
+   * 
+   =============================================================*/
+  
+  /**
+   * Checks if a product has already been pinned to the enquiry list or not
+   * 
+   * @param {String} prod_code
+   * @returns {Boolean}
+   */  
+  function enquiry_check(prod_code) {
+      session_set = sessionStorage.getItem(prod_code);
+      
+      if(session_set !== null) {
+          return true;
+      }else{
+          return false;
+      }
+      
+  }
+   
+  function set_overlay_pinned_true() {
+      $('.img-overlay-panel .overlay p').html('This piece has been pinned to your enquiry list.');
+      
+  }
+   
+  function update_enquire_bubble() {
+      if(sessionStorage.length > 0) {
+          $('.nav li.enquire a').addClass('update').attr('data-content', sessionStorage.length);       
+      }
+  }
+  
+  update_enquire_bubble();
+  
+  if($('#gallery-images .slider').length > 0){
+      prod_code = $('.img-overlay-panel').data('prod-code');
+      
+      is_pinned = enquiry_check(prod_code);
+      
+      if(is_pinned) {
+          set_overlay_pinned_true();
+      }
+      
+  }
+  
   // overlay click ==============================================
   $('.img-overlay-panel .overlay').click(function(){
       viewport = updateViewportDimensions();
   
-      if( viewport.width >= 1030 ) {
-        current_prod = $(this).parent().data('prod-code');
-        console.log(current_prod); //use this to set the session to be used on contact form
+      if( viewport.width >= 1030 && !is_pinned ) {
+        prod_code = $(this).parent().data('prod-code');
+        prod_thumbnail = $(this).parent().data('prod-thumbnail');
+        
+        sessionStorage.setItem(prod_code, prod_thumbnail);
+        
+        set_overlay_pinned_true();
+        
+        update_enquire_bubble();
+        
       }
   });
+
+
+  if($('#pc-contact-form').length > 0  && sessionStorage.length > 0){
+      for(var i=0; i < sessionStorage.length; i++) {
+          var propertyName = sessionStorage.key(i);
+          var propertyValue = sessionStorage.getItem(propertyName);
+          
+          $('#pc-contact-form .cart-container').append(
+              '<div class="m-session-1of3 t-session-1of6 d-session-1of6"><img data-prod-code="' + propertyName + '" class="flex" src="' + propertyValue + '" /></div>'
+          );
+      }
+      
+  }
+  
+  /*=============================================================
+   * 
+   *                  Gallery thumbnails align
+   * 
+   =============================================================*/
+  // scroll down to windows.resize stuff
  
   /*=============================================================
    * 
@@ -398,6 +473,19 @@ jQuery(document).ready(function($) {
       
       supersize_responsive_pause();
       nav_remove_style();
+      
+      
+      /*
+       * this kind of behaviour doesnt happen anywhere else that you are able to browse the thumbnails.
+       * its a bit wierd that it has a set height for every other page except when you are viewing a piece
+       * it can be done, but it just doesnt make much sense to me
+       * 
+       */
+      
+      /*gallheight = $('#gallery-images .slider').height();
+      
+      $('#gallery-thumbs').css({'height': (gallheight - 61 - 15)});*/
+      
   });
 
 }); /* end of as page load scripts */
