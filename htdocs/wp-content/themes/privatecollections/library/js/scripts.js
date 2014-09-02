@@ -183,7 +183,7 @@ jQuery(document).ready(function($) {
    * 
    =============================================================*/
    $('.header-bg .mobile-menu-dropdown').click(function(){
-        $('.nav').toggle();
+       $('.nav').toggle();
    });
   
   function nav_remove_style() {
@@ -229,11 +229,8 @@ jQuery(document).ready(function($) {
    * 
    =============================================================*/
   
-  /**
+  /*
    * Checks if a product has already been pinned to the enquiry list or not
-   * 
-   * @param {String} prod_code
-   * @returns {Boolean}
    */  
   function enquiry_check(prod_code) {
       session_set = sessionStorage.getItem(prod_code);
@@ -246,17 +243,24 @@ jQuery(document).ready(function($) {
       
   }
    
+  /*
+   * Changed the text on the overlay for products that have been pinned to the list
+   */
   function set_overlay_pinned_true() {
       $('.img-overlay-panel .overlay p').html('This piece has been pinned to your enquiry list.');
       
   }
    
+  /*
+   * makes the bubble appear above the enquiry menu item
+   */
   function update_enquire_bubble() {
       if(sessionStorage.length > 0) {
           $('.nav li.enquire a').addClass('update').attr('data-content', sessionStorage.length);       
       }
   }
   
+  // run this on page load so when navigating away from the product it still keeps the bubble visible
   update_enquire_bubble();
   
   if($('#gallery-images .slider').length > 0){
@@ -270,35 +274,124 @@ jQuery(document).ready(function($) {
       
   }
   
-  // overlay click ==============================================
+  /*
+   * Overlay click event, sets the session storage
+   */
   $('.img-overlay-panel .overlay').click(function(){
       viewport = updateViewportDimensions();
   
+      // this should only happen on desktop. The hover event is never triggered on mobile for the pieces
       if( viewport.width >= 1030 && !is_pinned ) {
-        prod_code = $(this).parent().data('prod-code');
-        prod_thumbnail = $(this).parent().data('prod-thumbnail');
+        prod_code = $(this).parent().data('prod-code'); //get product code
+        prod_thumbnail = $(this).parent().data('prod-thumbnail'); // get product thumbnail
         
+        // set the session storage
         sessionStorage.setItem(prod_code, prod_thumbnail);
         
+        // change the overlay to pinned
         set_overlay_pinned_true();
         
+        // update and display the bubble over the enquire menu item
         update_enquire_bubble();
         
       }
   });
 
-
+  /*
+   * 
+   */
   if($('#pc-contact-form').length > 0  && sessionStorage.length > 0){
+      var product_codes = [];
+      
       for(var i=0; i < sessionStorage.length; i++) {
           var propertyName = sessionStorage.key(i);
           var propertyValue = sessionStorage.getItem(propertyName);
+          
+          product_codes.push(propertyName);
           
           $('#pc-contact-form .cart-container').append(
               '<div class="m-session-1of3 t-session-1of6 d-session-1of6"><img data-prod-code="' + propertyName + '" class="flex" src="' + propertyValue + '" /></div>'
           );
       }
-      
   }
+  
+  
+  /*=============================================================
+   * 
+   *                  Form validation and ajax
+   * 
+   =============================================================*/
+  
+  // clear form fields on focus
+  $('#pc-contact-form input[type="text"], #pc-contact-form textarea').bind({
+      focus: function() {
+          $(this).removeClass('error');
+          
+          if($(this).val() === $(this).data('default')) {
+            $(this).val('');
+          }
+      },
+      focusout: function() {
+          if($(this).val() === ''){
+            $(this).val($(this).data('default'));
+          }
+      }
+  });
+  
+   // client side form validation
+   $('#pc-contact-form .submit-btn').click(function(e){
+        e.preventDefault();
+        
+        validName = validate("#enquire_name");
+        validEmail = validate_email("#enquire_email");
+        
+        if(!validName || !validEmail) {
+            alert('Please fill in all the required form fields correctly.');
+        }else{
+            //prepare data string to be sent to be sent via HTTP POST request
+            if(sessionStorage.length > 0) {
+                send_data = { 
+                    'Name': $('#enquire_name').val(),
+                    'Email': $('#enquire_email').val(),
+                    'Message': $('#enquire_message').val(),
+                    'Products': product_codes
+                };
+                
+            }else{
+                send_data = { 
+                    'Name': $('#enquire_name').val(),
+                    'Email': $('#enquire_email').val(),
+                    'Message': $('#enquire_message').val()
+                };
+                
+            }
+            
+            $.ajax({
+                type: "POST",
+                url: site_data.template_dir + '/library/scripts/enquire.execute.php',
+                data: send_data,
+                success: function(result){
+                    //clear the form
+                    $('#pc-contact-form input[type="text"], #pc-contact-form textarea').val(
+                        $('#pc-contact-form input[type="text"], #pc-contact-form textarea').data('default')
+                    );
+                    
+                    res = $.trim(result);
+                
+                    if(res === 'success'){
+                        alert('Thanks!');
+                    }else{
+                        alert('Error submitting form: ' . res);
+                    }
+                }
+            });
+            
+        }
+   });
+      
+ 
+  
+  
   
   /*=============================================================
    * 

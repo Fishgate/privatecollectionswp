@@ -40,6 +40,9 @@ body {
     opacity: 0;
 }
  
+ul#supersized {
+    margin: 0;
+}
 
 /********************
 WORDPRESS BODY CLASSES
@@ -195,6 +198,8 @@ GALLERY STYLES
 
 #gallery-thumbs {
     #thumbs-container {
+        div { }
+
         div.current {
             border: solid #d0ac2e 1px;
         }

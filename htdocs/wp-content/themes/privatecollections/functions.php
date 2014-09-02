@@ -11,9 +11,6 @@ sidebars, comments, ect.
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
 
-// USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
-require_once( 'library/custom-post-type.php' );
-
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 require_once( 'library/admin.php' );
 
@@ -296,11 +293,8 @@ class post_thumbnail {
     
     private $post_thumbnail_alt;
 
-    public function __construct() {
-        $this->post_id = get_the_ID();
-    }
-    
     private function get_post_thumbnail_id() {
+        $this->post_id = get_the_ID();
         return get_post_thumbnail_id( $this->post_id );
     }
     
@@ -318,7 +312,55 @@ class post_thumbnail {
     
 }
 
+/*
+ * Custom theme settings page
+ */
+function setup_theme_admin_menus() {  
+    add_menu_page('Private Collections Theme Settings', 'Theme Settings', 'manage_options', 'pctheme-settings', 'theme_settings_page', null, null );
+}  
 
+function theme_settings_page() {
+    require_once('library/_pc_theme_settings.php');
+}
+
+add_action("admin_menu", "setup_theme_admin_menus");
+
+
+
+/*
+ * Rename default posts type to something more intuitive
+ * (http://revelationconcept.com/wordpress-rename-default-posts-news-something-else/)
+ * 
+ */
+function change_post_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'Products';
+    $submenu['edit.php'][5][0] = 'Products';
+    $submenu['edit.php'][10][0] = 'Add Product';
+    $submenu['edit.php'][16][0] = 'Product Tags';
+    echo '';
+}
+function change_post_object() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'Products';
+    $labels->singular_name = 'Product';
+    $labels->add_new = 'Add Products';
+    $labels->add_new_item = 'Add Product';
+    $labels->edit_item = 'Edit Products';
+    $labels->new_item = 'Product';
+    $labels->view_item = 'View Product';
+    $labels->search_items = 'Search Products';
+    $labels->not_found = 'No Products found';
+    $labels->not_found_in_trash = 'No Products found in Trash';
+    $labels->all_items = 'All Products';
+    $labels->menu_name = 'Products';
+    $labels->name_admin_bar = 'News';
+}
+ 
+add_action( 'admin_menu', 'change_post_label' );
+add_action( 'init', 'change_post_object' );
 
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

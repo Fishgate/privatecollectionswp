@@ -22,30 +22,15 @@ function pc_contact_form() {
 
     <form id="pc-contact-form">
         <div class="cf">
-            <input class="m-all t-1of2 d-1of2" value="Name:" type="text">
-            <input class="m-all t-1of2 d-1of2 last" value="Email Address:" type="text">
+            <input id="enquire_name" class="m-all t-1of2 d-1of2" value="Name:" type="text" data-default="Name:">
+            <input id="enquire_email" class="m-all t-1of2 d-1of2 last" value="Email Address:" type="text" data-default="Email Address:">
         </div>
         
-        <textarea class="d-all t-all m-all">Message:</textarea>
+        <textarea id="enquire_message" class="d-all t-all m-all" data-default="Message:">Message:</textarea>
         
-        <div class="cart-container cf">
-            <!--<div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            
-            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>
-            <div class="m-session-1of3 t-session-1of6 d-session-1of6"><img class="flex" src="http://placehold.it/100x100&text=hello" /></div>-->
-        </div>
+        <div class="cart-container cf"></div>
         
         <input class="submit-btn" type="submit" value="Submit" />
-    
         
     </form>
         

@@ -13,18 +13,23 @@
 					<div id="main" class="m-main t-main d-main-gallery cf" role="main">
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
+                                                        <?php $this_post_id = get_the_ID(); ?>
+                                            
                                                         <section data-state="closed" class="category-dropdown cf">
                                                             <div>
                                                                 <h2>
-                                                                    <?php 
+                                                                    <?php
+                                                                    
                                                                     $category = get_the_category(); 
 
                                                                     foreach($category as $cat) {
                                                                         if($cat->name !== 'New Collection'){
                                                                             echo $cat->name;
+                                                                            $this_cat_term_id = $cat->term_id;
+                                                                            break;
                                                                         }
                                                                     }
+                                                                    
                                                                     ?>
                                                                 </h2>
                                                             </div>
@@ -46,6 +51,7 @@
 
                                                                     <section class="entry-content cf" itemprop="articleBody">
                                                                         <?php
+                                                                            
                                                                             // the content (pretty self explanatory huh)
                                                                             the_content();
 
@@ -88,7 +94,30 @@
                                                             
                                                             <div id="thumbs-container">
                                                                 
-                                                                <div class="current m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                <?php
+                                                                
+                                                                $related_posts = new WP_Query(array('cat' => $this_cat_term_id));
+                                                                
+                                                                $post_thumb = new post_thumbnail();
+                                                                
+                                                                if($related_posts->have_posts()) :
+                                                                    while($related_posts->have_posts()) :
+                                                                        $related_posts->the_post();
+                                                                        
+                                                                        if($this_post_id !== get_the_ID()) {
+                                                                            echo '<div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="'.get_permalink(get_the_ID()).'"><img class="flex" src="'.$post_thumb->get_src().'" /></a></div>';
+                                                                        }else{
+                                                                            echo '<div class="current m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="'.get_permalink(get_the_ID()).'"><img class="flex" src="'.$post_thumb->get_src().'" /></a></div>';
+                                                                        }
+                                                                    endwhile;
+                                                                endif;
+                                                                
+                                                                wp_reset_query();
+                                                                
+                                                                ?>
+                                                                
+                                                                <!--<div class="current m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                
                                                                 <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
                                                                 <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
                                                                 <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
@@ -121,8 +150,7 @@
                                                                 <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
                                                                 <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
                                                                 <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
-                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>
+                                                                <div class="m-gall-thumb-1-of-2 t-gall-thumb-1-of-5 d-gall-thumb-1-of-4"><a href="#"><img class="flex" src="http://placehold.it/145x145&text=hello" /></a></div>-->
                                                                 
                                                             </div>
                                                             

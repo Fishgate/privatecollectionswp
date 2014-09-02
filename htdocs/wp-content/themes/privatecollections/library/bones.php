@@ -154,8 +154,15 @@ function bones_scripts_and_styles() {
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
 		  wp_enqueue_script( 'comment-reply' );
     }
+                
+                // form validation stuff
+                wp_register_script( 'fg-validation', get_stylesheet_directory_uri() . '/library/js/libs/fg.validation.min.js', array('jquery'), '', true );
+                
+                // jquery form plugin (http://malsup.com/jquery/form/)
+                wp_register_script( 'jquery-form-plugin', get_stylesheet_directory_uri() . '/library/js/libs/jquery.form.min.js', array( 'jquery' ), '', true);
+    
                 // jquery.mousewheel.js
-                wp_register_script('jquery-mousewheel-js', get_stylesheet_directory_uri() . '/library/js/libs/jquery.mousewheel.min.js', array('jquery'), '', true );
+                wp_register_script( 'jquery-mousewheel-js', get_stylesheet_directory_uri() . '/library/js/libs/jquery.mousewheel.min.js', array('jquery'), '', true );
                 
                 // http://noraesae.github.io/perfect-scrollbar/
                 wp_register_script( 'perfect-scrollbar-js', get_stylesheet_directory_uri() . '/library/js/libs/perfect-scrollbar.min.js', array('jquery', 'jquery-mousewheel-js'), '', true );
@@ -174,7 +181,7 @@ function bones_scripts_and_styles() {
                 wp_register_script( 'jquery-visible', get_stylesheet_directory_uri() . '/library/js/libs/jquery.visible.min.js', array( 'jquery' ), '', true );
                 
                 // adding scripts file in the footer
-		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.min.js', array( 'jquery', 'supersized-js', 'supersized-shuttertheme-js' ), '', true );
+		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.min.js', array( 'jquery', 'supersized-js', 'supersized-shuttertheme-js', 'fg-validation' ), '', true );
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'bones-modernizr' );
@@ -201,6 +208,8 @@ function bones_scripts_and_styles() {
                 wp_enqueue_script( 'supersized-shuttertheme-js' );
                 wp_enqueue_script( 'flowtype-js' );
                 wp_enqueue_script( 'perfect-scrollbar-js' );
+                //wp_enqueue_script( 'jquery-form-plugin' );
+                wp_enqueue_script( 'fg-validation' );
 		wp_enqueue_script( 'bones-js' );
                 
                 // make some php data available to scripts.js                

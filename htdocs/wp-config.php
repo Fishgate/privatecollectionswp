@@ -43,6 +43,9 @@ if(file_exists( dirname( __FILE__ ) . '/wp-config-local.php' )){
         @ini_set('display_errors', 0);
 }
 
+/** Database table for logging enquiry form entries **/
+define('DB_ENQUIRY_LOGS_TBL', 'pc_enquiry_logs');
+
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
